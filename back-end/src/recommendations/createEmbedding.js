@@ -21,4 +21,4 @@ async function createEmbedding (textToEmbed) {
     return data
 }
 
-createEmbedding('Watercolor')
+module.exports = createEmbedding
