@@ -1,16 +1,16 @@
 exports.up = function (knex) {
     return knex.schema.createTable('recommendations', (table) => {
-        table.uuid('user_id').notNullable()
+        table.integer('user_id').notNullable()
         table
             .foreign('user_id')
             .references('user_id')
             .inTable('users')
-        table.uuid('video_id').notNullable()
+        table.integer('video_id').notNullable()
         table
             .foreign('video_id')
             .references('video_id')
             .inTable('videos')
-        table.uuid('embedding_id').notNullable()
+        table.integer('embedding_id').notNullable()
         table
             .foreign('embedding_id')
             .references('embedding_id')
