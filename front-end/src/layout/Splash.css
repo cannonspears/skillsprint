@@ -1,0 +1,7 @@
+.splash .message {
+  margin: auto;
+  padding: 15%;
+  margin-top: 40px;
+  display: grid;
+  max-width: 700px;
+}
