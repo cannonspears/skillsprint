@@ -1,24 +1,22 @@
-import asyncErrorHandler from "../errors/asyncErrorHandler";
-
 const service = require("./quizService");
 
 function validateTranscript(req, res, next) {
-  if (!req.body) {
+  if (!req.body.transcript) {
     next({
       status: 400,
       message: "Transcript is missing!",
     });
   }
 
-  return next();
+  next();
 }
 
-async function generate(req, res, next) {
-  const data = await service.generate(req.body);
+async function generate(req, res) {
+  const data = await service.generate(req.body.transcript);
 
-  res.status(200).json({ data });
+  res.status(200).json(data);
 }
 
 module.exports = {
-  generate: [validateTranscript, asyncErrorHandler(generate)],
+  generate: [validateTranscript, generate],
 };

@@ -13,37 +13,34 @@ const systemMessage = `You are an assistant designed to generate multiple-choice
 "question": (question text here), "options": (add the options in an array here), "answer": (insert the index of the correct option here),}}. Do not include anything in your response other than the JSON formatted object.`;
 
 async function generate(transcript) {
-  try {
-    const response = await fetch(OPENAI_CHAT_API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        temperature: "0.3",
-        messages: [
-          { role: "system", content: systemMessage },
-          { role: "user", content: transcript },
-        ],
-      }),
-    });
+  console.log("Generating");
 
-    const json = response.json();
-    const { content } = json.choices[0].message; // The message property here is where the actual response string from ChatGPT resides.
-    const iterableContent = JSON.parse(content); // Parsing the string so that we can iterate through it as an object.
+  const response = await fetch(OPENAI_CHAT_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: systemMessage },
+        { role: "user", content: transcript },
+      ],
+    }),
+  });
 
-    // Then we can create an array of conveniently shaped objects for use on the frontend.
-    const questions = [];
-    for (let value of Object.values(iterableContent)) {
-      questions.push(value);
-    }
+  const json = await response.json();
+  const { content } = json.choices[0].message; // The message property here is where the actual response string from ChatGPT resides.
+  const iterableContent = JSON.parse(content); // Parsing the string so that we can iterate through it as an object.
 
-    res.send(questions);
-  } catch (error) {
-    throw error;
+  // Then we can create an array of conveniently shaped objects for use on the frontend.
+  const questions = [];
+  for (let value of Object.values(iterableContent)) {
+    questions.push(value);
   }
+
+  return questions;
 }
 
-module.exports = generate;
+module.exports = { generate };
