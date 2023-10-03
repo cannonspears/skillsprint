@@ -1,14 +1,11 @@
 const knex = require('../db/connection')
-const cosineSimilarity = require('./cosineSimilarity')
 
-function search (embedding) {
-    const targetVectors = embedding
+function list () {
     return knex('embeddings')
-        .select('text', 'vectors_array')
-        .limit(5)
+        .select('text', 'vector')
         .finally(() => knex.destroy())
 }
 
 module.exports = {
-    search
+    list
 }
