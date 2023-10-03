@@ -1,6 +1,8 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import sprinterLogo from "../img/sprinter-300.png";
+import "./Menu.css";
 
 /**
  * Defines the menu for this application.
@@ -17,6 +19,7 @@ function Menu() {
             to="/#"
             className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
           >
+            <img src={sprinterLogo} />
             SkillSprint
           </Link>
         </h1>

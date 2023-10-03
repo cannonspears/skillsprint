@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Splash.css";
 
 function Splash() {
@@ -11,12 +12,14 @@ function Splash() {
             You've got things you want to learn. We've got things you can learn.
             Let's find the right match.
           </p>
-          <button
-            type="button"
-            class="btn btn-lg btn-secondary mx-auto col-10"
-          >
-            Launch your learning journey
-          </button>
+          <Link to="/signin">
+            <button
+              type="button"
+              class="btn btn-lg btn-secondary mx-auto col-10"
+            >
+              Launch your learning journey
+            </button>
+          </Link>
         </div>
       </div>
       <div className="col-md-6">

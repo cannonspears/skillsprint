@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Dashboard from "../dashboard/Dashboard";
 import NotFound from "./NotFound";
 import Splash from "./Splash";
+import Signin from "./Signin";
 
 /**
  * Defines all the routes for the application.
@@ -20,9 +21,9 @@ function Routes() {
       </Route>
       <Route
         exact={true}
-        path="/reservations"
+        path="/signin"
       >
-        <Redirect to={"/dashboard"} />
+        <Signin />
       </Route>
       <Route path="/dashboard">
         <Dashboard />
