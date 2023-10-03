@@ -6,12 +6,15 @@ const cors = require("cors");
 const errorHandler = require("./errors/errorHandler");
 const notFound = require("./errors/notFound");
 const quizRouter = require("./quiz/quizRouter");
+const usersRouter = require("./users/usersRouter");
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/quizzes", quizRouter);
+
+app.use("/users", usersRouter);
 
 app.use(notFound);
 app.use(errorHandler);
