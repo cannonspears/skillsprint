@@ -12,11 +12,9 @@ function read(user_id) {
 }
 
 function update(user) {
-    const { user_id, user_name, user_age, user_dob } = user
-
     return knex('users')
-        .update({ user_name, user_age, user_dob })
-        .where({ user_id })
+        .update(user)
+        .where({ user_id: user.user_id })
         .returning('*')
         .then((updatedRecords) => updatedRecords[0])
 }
