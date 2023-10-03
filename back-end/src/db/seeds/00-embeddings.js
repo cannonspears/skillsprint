@@ -1,4 +1,4 @@
-const vectors = require('./00-vectors.json')
+const vectors = require('./00-embeddings.json')
 
 exports.seed = function (knex) {
     // Deletes ALL existing entries
