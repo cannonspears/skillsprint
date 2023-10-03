@@ -1,6 +1,6 @@
 const vectors = require('./00-embeddings.json')
 vectors.forEach((item) => {
-    item.vectors_array = JSON.stringify(item.vectors_array)
+    item.vector = JSON.stringify(item.vector)
 })
 
 exports.seed = function (knex) {

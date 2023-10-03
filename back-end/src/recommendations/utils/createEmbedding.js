@@ -2,7 +2,6 @@ require('dotenv').config()
 const API_KEY = process.env.OPENAI_API_KEY
 
 async function createEmbedding(textToEmbed) {
-    console.log(API_KEY)
     const openAiHeaders = {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${API_KEY}`,
@@ -21,7 +20,6 @@ async function createEmbedding(textToEmbed) {
     )
     const data = await response.json()
     const embeddings = data.data[0].embedding
-    console.log(embeddings)
     return embeddings
 }
 
