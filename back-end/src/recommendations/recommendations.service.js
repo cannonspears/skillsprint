@@ -1,27 +1,47 @@
 const knex = require('../db/connection')
 
-function create () {
-
+function create (recommendation) {
+    return knex('recommendations')
+        .insert(recommendation)
+        .returning('*')
+        .finally(() => knex.destroy())
 }
 
-function read () {
-
-}
-
-function update () {
-
+function read (recommendationId) {
+    return knex('recommendations')
+        .join('users', 'recommendations.user_id', 'users.user_id')
+        .join('videos', 'recommendations.video_id', 'videos.video_id')
+        .select('*')
+        .where({ recommendation_id: recommendationId})
+        .first()
+        .finally(() => knex.destroy())
 }
 
 function remove (recommendationId) {
-
+    return knex('recommendations')
+        .where({ recommendation_id: recommendationId })
+        .del()
+        .finally(() => knex.destroy())
 }
 
-function list () {
+function listRecommendations () {
+    return knex('recommendations')
+        .join('users', 'recommendations.user_id', 'users.user_id')
+        .join('videos', 'recommendations.video_id', 'videos.video_id')
+        .select('*')
+        .finally(() => knex.destroy())
+}
+
+function listEmbeddings () {
     return knex('embeddings')
-        .select('text', 'vector')
+        .select('*')
         .finally(() => knex.destroy())
 }
 
 module.exports = {
-    list
+    create,
+    read,
+    remove,
+    listRecommendations,
+    listEmbeddings
 }

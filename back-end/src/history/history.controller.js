@@ -22,7 +22,7 @@ async function create (req, res) {
     if (response) res.status(200).json({ data: response[0] })
 }
 
-async function read (_req, res) {
+function read (_req, res) {
     const { history } = res.locals
     res.json({ data: history })
 }
