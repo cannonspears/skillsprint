@@ -1,25 +1,30 @@
-import React from "react";
-import "./Search.css";
+import React from 'react'
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import './Search.css'
 
 function Search() {
-  return (
-    <div className="searchContainer">
-      <div className="input-group">
-        <input
-          type="search"
-          id="search"
-          className="form-control"
-        />
+    let history = useHistory()
 
-        <button
-          type="button"
-          className="btn btn-primary"
-        >
-          <i className="bi bi-search"></i>
-        </button>
-      </div>
-    </div>
-  );
+    const submitHandler = (e) => {
+        e.preventDefault()
+        const searchTerm = e.target.search.value
+
+        history.push(`/topic/${searchTerm}`)
+    }
+
+    return (
+        <div className="searchContainer">
+            <form name="search" onSubmit={submitHandler}>
+                <div className="input-group">
+                    <input type="search" id="search" className="form-control" />
+
+                    <button type="submit" className="btn btn-primary">
+                        <i className="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    )
 }
 
-export default Search;
+export default Search
