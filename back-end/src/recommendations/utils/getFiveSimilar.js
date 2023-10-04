@@ -1,4 +1,4 @@
-const service = require('../recommendations.service')
+const service = require('./utilities.service')
 const cosineSimilarity = require('./cosineSimilarity')
 const createEmbedding = require('./createEmbedding')
 

@@ -31,8 +31,10 @@ async function remove (_req, res) {
     res.sendStatus(204)
 }
 
-async function list (req, res, next) {
-
+async function list (req, res) {
+    const user_id = Number(req.params.user_id)
+    const response = await service.list(user_id)
+    if (response) res.json({ data: response })
 }
 
 module.exports = {

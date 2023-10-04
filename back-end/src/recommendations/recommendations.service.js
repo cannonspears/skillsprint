@@ -24,17 +24,12 @@ function remove (recommendationId) {
         .finally(() => knex.destroy())
 }
 
-function listRecommendations () {
+function list (user_id) {
     return knex('recommendations')
         .join('users', 'recommendations.user_id', 'users.user_id')
         .join('videos', 'recommendations.video_id', 'videos.video_id')
         .select('*')
-        .finally(() => knex.destroy())
-}
-
-function listEmbeddings () {
-    return knex('embeddings')
-        .select('*')
+        .where({user_id: user_id})
         .finally(() => knex.destroy())
 }
 
@@ -42,6 +37,5 @@ module.exports = {
     create,
     read,
     remove,
-    listRecommendations,
-    listEmbeddings
+    list
 }
