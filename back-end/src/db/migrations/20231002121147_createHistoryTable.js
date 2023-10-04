@@ -5,7 +5,7 @@ exports.up = function (knex) {
             .foreign('user_id')
             .references('user_id')
             .inTable('users')
-        table.integer('video_id').unsigned()
+        table.string('video_id')
         table
             .foreign('video_id')
             .references('video_id')
