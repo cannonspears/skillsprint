@@ -10,11 +10,6 @@ exports.up = function (knex) {
             .foreign('video_id')
             .references('video_id')
             .inTable('videos')
-        table.integer('embedding_id').notNullable()
-        table
-            .foreign('embedding_id')
-            .references('embedding_id')
-            .inTable('embeddings')
         table.timestamps(true, true)
     })
 }
