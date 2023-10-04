@@ -11,7 +11,6 @@ exports.up = function (knex) {
             .references('video_id')
             .inTable('videos')
         table.boolean('video_completed').defaultTo(0)
-        table.boolean('user_video_rating').nullable()
         table.timestamps(true, true)
     })
 }
