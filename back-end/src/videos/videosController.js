@@ -2,6 +2,15 @@ const service = require('./videosService')
 const asyncErrorHandler = require('../errors/asyncErrorHandler')
 
 // Validation //
+async function checkVideoExists(req, res, next) {
+    const { video_id } = req.params
+    res.locals.video = await service.read(video_id)
+    if (!res.locals.video) {
+        next({ status: 404, message: `Video with ID ${video_id} not found` })
+    }
+    next()
+}
+
 function validateNewVideos(req, res, next) {
     const { videos } = req.body
     res.locals.videos = []
@@ -36,23 +45,29 @@ function validateNewVideos(req, res, next) {
 // Services //
 async function create(req, res) {
     const { videos } = res.locals
-    const data = await service.create(videos)
-    res.status(200).json(data)
+    const createdVideos = await service.create(videos)
+    res.status(201).json(createdVideos)
 }
 
 async function read(req, res) {
-    const { video_id } = req.params
-    const data = await service.read(video_id)
-    res.json(data)
+    const { video } = res.locals
+    res.json(video)
 }
 
 async function list(req, res) {
-    const data = await service.list()
-    res.send(data)
+    const videos = await service.list()
+    res.send(videos)
+}
+
+async function remove(req, res) {
+    const { video_id } = req.params
+    const removedVideo = await service.remove(video_id)
+    res.status(200).json(removedVideo)
 }
 
 module.exports = {
     create: [validateNewVideos, asyncErrorHandler(create)],
-    read,
+    read: [asyncErrorHandler(checkVideoExists), read],
     list: asyncErrorHandler(list),
+    remove: [asyncErrorHandler(checkVideoExists), remove],
 }
