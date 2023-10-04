@@ -32,11 +32,12 @@ function remove (historyId) {
         .finally(() => knex.destroy())
 }
 
-function list () {
+function list (userId) {
     return knex('history')
         .join('users', 'history.user_id', 'users.user_id')
         .join('videos', 'history.video_id', 'videos.video_id')
         .select('*')
+        .where({ user_id: userId })
         .finally(() => knex.destroy())
 }
 
