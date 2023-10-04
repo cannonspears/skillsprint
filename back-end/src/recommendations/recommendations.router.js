@@ -4,6 +4,7 @@ const methodNotAllowed = require('../errors/asyncErrorHandler')
 
 router
     .route('/:recommendationId')
+    .get(controller.read)
     .delete(controller.delete)
     .all(methodNotAllowed)
 
