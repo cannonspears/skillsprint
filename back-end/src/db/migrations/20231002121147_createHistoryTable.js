@@ -1,11 +1,12 @@
 exports.up = function (knex) {
     return knex.schema.createTable('history', (table) => {
+        table.increments('history_id').primary()
         table.integer('user_id').unsigned()
         table
             .foreign('user_id')
             .references('user_id')
             .inTable('users')
-        table.string('video_id')
+        table.string('video_id').notNullable()
         table
             .foreign('video_id')
             .references('video_id')
