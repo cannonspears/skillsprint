@@ -1,4 +1,5 @@
 const service = require('./usersService')
+const asyncErrorHandler = require('../errors/asyncErrorHandler')
 
 // Validation //
 async function validateNewUser(req, res, next) {
@@ -22,18 +23,7 @@ async function validateNewUser(req, res, next) {
 }
 
 async function validateUpdatedUser(req, res, next) {
-    console.log(req.body)
-
-    const {
-        user_name,
-        user_age,
-        user_dob,
-        user_level,
-        user_points,
-        preferred_skills,
-        recommendations_on,
-        new_user,
-    } = req.body
+    const { user_name, user_age, user_dob, user_level, user_points } = req.body
 
     if (!user_name || !user_name.length) {
         next({ status: 400, message: 'Name field is empty or missing' })
@@ -47,24 +37,12 @@ async function validateUpdatedUser(req, res, next) {
         next({ status: 400, message: 'DoB field is empty or missing' })
     }
 
-    if (!user_level || user_level < 0) {
+    if (user_level === null || user_level === undefined || user_level < 0) {
         next({ status: 400, message: 'Level field is missing or invalid' })
     }
 
-    if (!user_points || user_points < 0) {
+    if (user_points === null || user_level === undefined || user_points < 0) {
         next({ status: 400, message: 'Points field is missing or invalid' })
-    }
-
-    if (!preferred_skills) {
-        next({ status: 400, message: 'Preferred skills field is missing' })
-    }
-
-    if (recommendations_on === null || recommendations_on === undefined) {
-        next({ status: 400, message: 'Recommendations field is missing' })
-    }
-
-    if (new_user === null || new_user === undefined) {
-        next({ status: 400, message: 'New user field is missing' })
     }
 
     res.locals.updatedUser = {
@@ -73,22 +51,24 @@ async function validateUpdatedUser(req, res, next) {
         user_dob,
         user_level,
         user_points,
-        preferred_skills,
-        recommendations_on,
-        new_user,
     }
 
     next()
 }
 
 async function validateUserId(req, res, next) {
-    const { userId } = req.params
-    const user = await service.read(userId)
+    const { user_id } = req.params
+
+    if (isNaN(parseInt(user_id))) {
+        next({ status: 400, message: `ID ${user_id} is not a valid integer` })
+    }
+
+    const user = await service.read(user_id)
 
     if (!user) {
         next({
             status: 404,
-            message: `User ID ${userId} does not exist!`,
+            message: `User with ID ${user_id} does not exist!`,
         })
     }
 
@@ -105,25 +85,37 @@ async function create(req, res) {
 }
 
 async function list(req, res) {
-    const data = await service.list();
-    res.json(data);
+    const data = await service.list()
+    res.json(data)
 }
 
 async function read(req, res) {
-    const { user } = res.locals
-    res.json(user)
+    const data = res.locals.user
+    res.json(data)
 }
 
 async function update(req, res) {
+    const { user_id } = req.params
     const { updatedUser } = res.locals
-    updatedUser.user_id = req.params.userId
+    updatedUser.user_id = user_id
     const data = await service.update(updatedUser)
     res.status(200).json(data)
 }
 
+async function remove(req, res) {
+    const { user_id } = req.params
+    const data = await service.remove(user_id)
+    res.status(200).json(data)
+}
+
 module.exports = {
-    create: [validateNewUser, create],
-    list,
-    read: [validateUserId, read],
-    update: [validateUpdatedUser, validateUserId, update],
+    create: [validateNewUser, asyncErrorHandler(create)],
+    list: asyncErrorHandler(list),
+    read: [asyncErrorHandler(validateUserId), read],
+    update: [
+        validateUpdatedUser,
+        asyncErrorHandler(validateUserId),
+        asyncErrorHandler(update),
+    ],
+    remove: [asyncErrorHandler(validateUserId), asyncErrorHandler(remove)],
 }

@@ -12,15 +12,23 @@ function list() {
 }
 
 function read(user_id) {
-    return knex('users').where({ user_id })
+    return knex('users').where({ user_id }).first()
 }
 
 function update(user) {
+    const { user_id } = user
+
     return knex('users')
         .update(user)
-        .where({ user_id: user.user_id })
+        .where({ user_id })
         .returning('*')
         .then((updatedRecords) => updatedRecords[0])
 }
 
-module.exports = { create, list, read, update }
+// Note: This method returns an integer represented the
+// number of rows deleted. So, successful = 1.
+function remove(user_id) {
+    return knex('users').where({ user_id }).del()
+}
+
+module.exports = { create, list, read, update, remove }
