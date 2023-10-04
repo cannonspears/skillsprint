@@ -5,37 +5,37 @@ import sprinterLogo from "../img/sprinter-300.png";
 
 function Signin() {
   return (
-    <main class="form-signin text-center">
+    <main className="form-signin text-center">
       <form>
         <img
-          class="mb-4"
+          className="mb-4"
           src={sprinterLogo}
           alt=""
           width="72"
           height="57"
         />
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
-        <div class="form-floating">
+        <div className="form-floating">
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="floatingInput"
             placeholder="name@example.com"
           />
           <label for="floatingInput">Email address</label>
         </div>
-        <div class="form-floating">
+        <div className="form-floating">
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             id="floatingPassword"
             placeholder="Password"
           />
           <label for="floatingPassword">Password</label>
         </div>
 
-        <div class="checkbox mb-3">
+        <div className="checkbox mb-3">
           <label>
             <input
               type="checkbox"
@@ -46,13 +46,13 @@ function Signin() {
         </div>
         <Link to="/dashboard">
           <button
-            class="w-100 btn btn-lg btn-primary"
+            className="w-100 btn btn-lg btn-primary"
             type="submit"
           >
             Sign in
           </button>
         </Link>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
       </form>
     </main>
   );
