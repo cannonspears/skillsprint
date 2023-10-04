@@ -27,8 +27,22 @@ function update(user) {
 
 // Note: This method returns an integer represented the
 // number of rows deleted. So, successful = 1.
+// The transaction stuff is to delete from multiple tables at once
+// where the tables rely on the foreign key, "user_id"
 function remove(user_id) {
-    return knex('users').where({ user_id }).del()
+    return knex.transaction(function (trx) {
+        return trx('history')
+            .where({ user_id })
+            .del()
+            .then(() => {
+                return trx('recommendations')
+                    .where({ user_id })
+                    .del()
+                    .then(() => {
+                        return trx('users').where({ user_id }).del()
+                    })
+            })
+    })
 }
 
 module.exports = { create, list, read, update, remove }
