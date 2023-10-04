@@ -1,35 +1,18 @@
-import React from "react";
-import "./SuggestedButtons.css";
+import React from 'react'
+import { useEffect } from 'react'
+import './SuggestedButtons.css'
+import SuggestedButtonSingle from './SuggestedButtonSingle'
 
 function SuggestedButtons() {
-  return (
-    <div className="text-center m-3">
-      <button
-        type="button"
-        className="suggested btn btn-success"
-      >
-        TOpic XYZ
-      </button>
-      <button
-        type="button"
-        className="suggested btn btn-success"
-      >
-        TOpic XYZ
-      </button>
-      <button
-        type="button"
-        className="suggested btn btn-success"
-      >
-        TOpic XYZ
-      </button>
-      <button
-        type="button"
-        className="suggested btn btn-success"
-      >
-        TOpic XYZ
-      </button>
-    </div>
-  );
+    const suggestedTopics = require('./SuggestedTopics.json')
+
+    return (
+        <div className="text-center m-3">
+            {suggestedTopics.map((topic, index) => (
+                <SuggestedButtonSingle topic={topic.topic} key={index} />
+            ))}
+        </div>
+    )
 }
 
-export default SuggestedButtons;
+export default SuggestedButtons
