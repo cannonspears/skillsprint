@@ -104,6 +104,11 @@ async function create(req, res) {
     res.status(200).json(data)
 }
 
+async function list(req, res) {
+    const data = await service.list();
+    res.json(data);
+}
+
 async function read(req, res) {
     const { user } = res.locals
     res.json(user)
@@ -118,6 +123,7 @@ async function update(req, res) {
 
 module.exports = {
     create: [validateNewUser, create],
+    list,
     read: [validateUserId, read],
     update: [validateUpdatedUser, validateUserId, update],
 }

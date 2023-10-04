@@ -7,6 +7,10 @@ function create(user) {
         .then((createdRecords) => createdRecords[0])
 }
 
+function list() {
+    return knex('users').select('*')
+}
+
 function read(user_id) {
     return knex('users').where({ user_id })
 }
@@ -19,4 +23,4 @@ function update(user) {
         .then((updatedRecords) => updatedRecords[0])
 }
 
-module.exports = { create, read, update }
+module.exports = { create, list, read, update }
