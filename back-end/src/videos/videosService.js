@@ -16,7 +16,14 @@ function list() {
 }
 
 function remove(video_id) {
-    return knex('videos').where({ video_id }).del()
+    return knex.transaction(function (trx) {
+        return trx('history')
+            .where({ video_id })
+            .del()
+            .then(() => {
+                return trx('videos').where({ video_id }).del()
+            })
+    })
 }
 
 module.exports = { create, read, list, remove }

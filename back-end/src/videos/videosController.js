@@ -69,5 +69,5 @@ module.exports = {
     create: [validateNewVideos, asyncErrorHandler(create)],
     read: [asyncErrorHandler(checkVideoExists), read],
     list: asyncErrorHandler(list),
-    remove: [asyncErrorHandler(checkVideoExists), remove],
+    remove: [asyncErrorHandler(checkVideoExists), asyncErrorHandler(remove)],
 }
