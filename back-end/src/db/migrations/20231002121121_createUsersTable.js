@@ -6,9 +6,6 @@ exports.up = function (knex) {
         table.date('user_dob').notNullable()
         table.integer('user_level').defaultTo(0)
         table.integer('user_points').defaultTo(0)
-        table.jsonb('preferred_skills').nullable()
-        table.boolean('recommendations_on').defaultTo(1)
-        table.boolean('new_user').defaultTo(1)
         table.timestamps(true, true)
     })
 }
