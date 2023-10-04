@@ -19,7 +19,7 @@ function Splash() {
           <Link to="/signin">
             <button
               type="button"
-              class="btn btn-lg btn-secondary mx-auto col-10"
+              className="btn btn-lg btn-secondary mx-auto col-10"
             >
               Launch your learning journey
             </button>
