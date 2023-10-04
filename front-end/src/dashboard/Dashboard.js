@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search";
+import SuggestedButtons from "./SuggestedButtons";
 
 function Dashboard({ date }) {
   return (
     <main>
-      <h1>Dashboard</h1>
       <Search />
+      <SuggestedButtons />
     </main>
   );
 }
