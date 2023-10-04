@@ -46,8 +46,8 @@ async function remove (req, res) {
 }
 
 async function list (req, res) {
-    const userId = Number(req.params.userId)
-    const response = await service.list(userId)
+    const user_id = Number(req.params.user_id)
+    const response = await service.list(user_id)
     if (response) res.json({ data: response })
 }
 
