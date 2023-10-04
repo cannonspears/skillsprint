@@ -118,4 +118,7 @@ module.exports = {
         asyncErrorHandler(update),
     ],
     remove: [asyncErrorHandler(validateUserId), asyncErrorHandler(remove)],
+    userExists: [
+        validateUserId
+    ]
 }
