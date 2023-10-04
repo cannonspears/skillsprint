@@ -1,15 +1,12 @@
 exports.up = function (knex) {
     return knex.schema.createTable('recommendations', (table) => {
+        table.increments('recommendation_id').primary()
         table.integer('user_id').notNullable()
         table
             .foreign('user_id')
             .references('user_id')
             .inTable('users')
-        table.string('video_id').notNullable()
-        table
-            .foreign('video_id')
-            .references('video_id')
-            .inTable('videos')
+        table.json('videos')
         table.timestamps(true, true)
     })
 }
