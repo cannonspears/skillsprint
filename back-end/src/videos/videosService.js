@@ -8,11 +8,15 @@ function create(videos) {
 }
 
 function read(video_id) {
-    return knex('videos').select('*').where({ video_id })
+    return knex('videos').select('*').where({ video_id }).first()
 }
 
 function list() {
     return knex('videos').select('*')
 }
 
-module.exports = { create, read, list }
+function remove(video_id) {
+    return knex('videos').where({ video_id }).del()
+}
+
+module.exports = { create, read, list, remove }
