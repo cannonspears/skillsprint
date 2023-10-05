@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-import { Link } from "react-router-dom";
-import sprinterLogo from "../img/sprinter-300.png";
-import "./Menu.css";
+import { Link } from 'react-router-dom'
+import sprinterLogo from '../img/sprinter-300.png'
+import './Menu.css'
 
 /**
  * Defines the menu for this application.
@@ -10,36 +10,43 @@ import "./Menu.css";
  * @returns {JSX.Element}
  */
 
-function Menu() {
-  return (
-    <div className="container">
-      <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <Link
-          to="/#"
-          className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
-        >
-          <h1>
-            <img src={sprinterLogo} />
-            SkillSprint
-          </h1>
-        </Link>
-        <div className="col-md-3 text-end">
-          <button
-            type="button"
-            className="btn btn-outline-primary me-2"
-          >
-            Register
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary"
-          >
-            Login
-          </button>
+function Menu({ loggedIn }) {
+    return (
+        <div className="container">
+            <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <Link
+                    to="/#"
+                    className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+                >
+                    <h1>
+                        <img src={sprinterLogo} />
+                        SkillSprint
+                    </h1>
+                    {loggedIn ? <p>Yes</p> : <p>No</p>}
+                </Link>
+                {loggedIn ? (
+                    <button
+                        type="button"
+                        className="btn btn-outline-primary me-2"
+                    >
+                        Log out
+                    </button>
+                ) : (
+                    <div className="col-md-3 text-end">
+                        <button
+                            type="button"
+                            className="btn btn-outline-primary me-2"
+                        >
+                            Register
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                            Login
+                        </button>
+                    </div>
+                )}
+            </header>
         </div>
-      </header>
-    </div>
-  );
+    )
 }
 
-export default Menu;
+export default Menu
