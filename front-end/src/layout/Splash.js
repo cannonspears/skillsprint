@@ -6,6 +6,7 @@ import educatedLizard from '../img/educated-lizard.png'
 import educatedKitten from '../img/educated-kitten.png'
 import educatedAlien from '../img/educated-alien.png'
 import crazyEducatedSnail from '../img/crazy-educated-snail.png'
+import educatedSloth from '../img/educated-sloth.png'
 
 function Splash() {
     return (
@@ -43,10 +44,13 @@ function Splash() {
                             <img className="img-fluid" src={educatedLizard} />
                         </div>
                         <div className="face5">
-                            <img className="img-fluid" src={crazyEducatedSnail} />
+                            <img className="img-fluid" src={educatedSloth} />
                         </div>
                         <div className="face6">
-                            <img className="img-fluid" src={crazyEducatedSnail} />
+                            <img
+                                className="img-fluid"
+                                src={crazyEducatedSnail}
+                            />
                         </div>
                     </div>
                 </div>
