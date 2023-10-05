@@ -1,14 +1,20 @@
 import React from 'react'
 import './CardsList.css'
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import CardSingle from './CardSingle'
 
 function CardsList() {
     const { topic } = useParams(0)
+    const videos = require('./videos.json')
     return (
         <>
             <h2>{topic}</h2>
             <div className="text-center m-3 cardsList">
                 <br />
+                {videos.map((video) => {
+                    ;<CardSingle video={video} />
+                })}
+
                 <Link to="#">
                     <div className="card">
                         <img
