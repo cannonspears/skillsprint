@@ -22,7 +22,7 @@ function Menu({ loggedIn }) {
                         <img src={sprinterLogo} />
                         SkillSprint
                     </h1>
-                    {loggedIn ? <p>Yes</p> : <p>No</p>}
+                    
                 </Link>
                 {loggedIn ? (
                     <button
