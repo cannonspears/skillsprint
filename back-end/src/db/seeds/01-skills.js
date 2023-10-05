@@ -1,8 +1,8 @@
 const skillsData = require('./01-skills.json')
 const skills = skillsData.map((skill) => {
-    const skill_name = Object.keys(skill)[0]
-    const skill_videos = skill[skill_name]
-    return {skill_name, skill_videos}
+    const name = Object.keys(skill)[0]
+    const videos = skill[name]
+    return {skill_name: name, skill_videos: JSON.stringify(videos)}
 })
 
 exports.seed = function (knex) {

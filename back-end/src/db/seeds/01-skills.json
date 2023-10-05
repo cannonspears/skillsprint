@@ -260,7 +260,9 @@
                     "channelTitle": "wayForward"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Emotional Intelligence": [
             {
                 "id": {
@@ -347,7 +349,9 @@
                     "channelTitle": "TEDx Talks"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Stress Management": [
             {
                 "id": {
@@ -434,7 +438,9 @@
                     "channelTitle": "HealthTexas Primary Care Doctors"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Critical Thinking": [
             {
                 "id": {
@@ -521,7 +527,9 @@
                     "channelTitle": "Bite-sized Philosophy"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Self-Discipline": [
             {
                 "id": {
@@ -608,7 +616,9 @@
                     "channelTitle": "struthless"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Financial Literacy": [
             {
                 "id": {
@@ -695,7 +705,9 @@
                     "channelTitle": "Khan Academy"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Networking": [
             {
                 "id": {
@@ -782,7 +794,9 @@
                     "channelTitle": "Network Direction"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Public Speaking": [
             {
                 "id": {
@@ -869,7 +883,9 @@
                     "channelTitle": "Motivation2Study"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Negotiation Skills": [
             {
                 "id": {
@@ -956,7 +972,9 @@
                     "channelTitle": "Erich Pommer Institut"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Conflict Resolution": [
             {
                 "id": {
@@ -1043,7 +1061,9 @@
                     "channelTitle": "BRAINY DOSE"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Adaptability": [
             {
                 "id": {
@@ -1130,7 +1150,9 @@
                     "channelTitle": "Employment and Social Development Canada"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Mindfulness and Meditation": [
             {
                 "id": {
@@ -1217,7 +1239,9 @@
                     "channelTitle": "The Mindful Movement"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Leadership": [
             {
                 "id": {
@@ -1304,7 +1328,9 @@
                     "channelTitle": "TED"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Creativity": [
             {
                 "id": {
@@ -1391,7 +1417,9 @@
                     "channelTitle": "TEDx Talks"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Learning How to Learn": [
             {
                 "id": {
@@ -1478,7 +1506,9 @@
                     "channelTitle": "Luke Barousse"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Physical Fitness": [
             {
                 "id": {
@@ -1565,7 +1595,9 @@
                     "channelTitle": "Roberta's Gym"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Organization Skills": [
             {
                 "id": {
@@ -1652,7 +1684,9 @@
                     "channelTitle": "COBIDU eLearning"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Resilience": [
             {
                 "id": {
@@ -1739,7 +1773,9 @@
                     "channelTitle": "TEDx Talks"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Decision Making": [
             {
                 "id": {
@@ -1826,7 +1862,9 @@
                     "channelTitle": "After Skool"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Empathy": [
             {
                 "id": {
@@ -1913,7 +1951,9 @@
                     "channelTitle": "Simon Sinek"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Self-Reflection": [
             {
                 "id": {
@@ -2000,7 +2040,9 @@
                     "channelTitle": "Jace! - Topic"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Conflict Management": [
             {
                 "id": {
@@ -2087,7 +2129,9 @@
                     "channelTitle": "TED Institute"
                 }
             }
-        ],
+        ]
+    },
+    {
         "Hobby Development": [
             {
                 "id": {
