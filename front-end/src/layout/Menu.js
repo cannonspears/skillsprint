@@ -22,15 +22,22 @@ function Menu({ loggedIn }) {
                         <img src={sprinterLogo} />
                         SkillSprint
                     </h1>
-                    
                 </Link>
                 {loggedIn ? (
-                    <button
-                        type="button"
-                        className="btn btn-outline-primary me-2"
-                    >
-                        Log out
-                    </button>
+                    <div>
+                        <button
+                            type="button"
+                            className="btn btn-outline-info me-2"
+                        >
+                            Help
+                        </button>
+                        <button
+                            type="button"
+                            className="btn btn-outline-primary me-2"
+                        >
+                            Log out
+                        </button>
+                    </div>
                 ) : (
                     <div className="col-md-3 text-end">
                         <button

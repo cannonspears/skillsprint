@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Video title",
+        "destination": "#",
+        "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "thumb": "https://placehold.co/1280x720"
+    },
+    {
+        "title": "Video title",
+        "destination": "#",
+        "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "thumb": "https://placehold.co/1280x720"
+    },
+    {
+        "title": "Video title",
+        "destination": "#",
+        "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "thumb": "https://placehold.co/1280x720"
+    }
+]
