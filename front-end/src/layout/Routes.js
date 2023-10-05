@@ -11,14 +11,14 @@ import CardsList from '../cards/CardsList'
  * Defines all the routes for the application.
  * @returns {JSX.Element}
  */
-function Routes() {
+function Routes({ setLoggedIn }) {
     return (
         <Switch>
             <Route exact={true} path="/">
                 <Splash />
             </Route>
             <Route exact={true} path="/signin">
-                <Signin />
+                <Signin setLoggedIn={setLoggedIn} />
             </Route>
             <Route path="/dashboard">
                 <Dashboard />

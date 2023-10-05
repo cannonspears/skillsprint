@@ -3,7 +3,11 @@ import './Signin.css'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import sprinterLogo from '../img/sprinter-300.png'
 
-function Signin() {
+function Signin({ setLoggedIn }) {
+    const handleSignIn = () => {
+        setLoggedIn(true)
+    }
+
     return (
         <main className="form-signin text-center">
             <form>
@@ -45,6 +49,7 @@ function Signin() {
                     <button
                         className="w-100 btn btn-lg btn-primary"
                         type="submit"
+                        onClick={handleSignIn}
                     >
                         Sign in
                     </button>
