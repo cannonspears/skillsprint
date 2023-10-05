@@ -16,4 +16,4 @@ async function getUserHistory (user_id) {
     console.log(history)
 }
 
-getUserHistory(1)
+getUserHistory(2)

@@ -8,13 +8,11 @@ function listEmbeddings () {
 }
 
 // Gets specific user history
-function listUserHistory (user_id) {
+function listUserHistory (userId) {
     return knex('history')
-        .join('users', 'recommendations.user_id', 'users.user_id')
-        .join('videos', 'recommendations.video_id', 'videos.video_id')
+        .join('videos', 'history.video_id', 'videos.video_id')
         .select('*')
-        .where({ user_id: user_id })
-        .orderBy('created_at', 'desc')
+        .where({ user_id: userId })
         .finally(() => knex.destroy())
 }
 
