@@ -1,0 +1,17 @@
+.cardsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardsList a {
+    text-decoration: none;
+}
+
+.cardsList .card {
+    max-width: 18rem;
+    margin: 1rem;
+    transition: all 0.2s;
+}
+.cardsList .card:hover {
+    scale: 1.1;
+}

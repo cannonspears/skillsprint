@@ -1,8 +1,9 @@
-import React from "react";
-import Menu from "./Menu";
-import Routes from "./Routes";
+import React from 'react'
+import Menu from './Menu'
+import Routes from './Routes'
+import { useState } from 'react'
 
-import "./Layout.css";
+import './Layout.css'
 
 /**
  * Defines the main layout of the application.
@@ -12,16 +13,18 @@ import "./Layout.css";
  * @returns {JSX.Element}
  */
 function Layout() {
-  return (
-    <div className="container-fluid">
-      <Menu />
-      <div className="row h-100">
-        <div className="col">
-          <Routes />
+    const [loggedIn, setLoggedIn] = useState(false)
+
+    return (
+        <div className="container-fluid">
+            <Menu loggedIn={loggedIn} />
+            <div className="row h-100">
+                <div className="col">
+                    <Routes setLoggedIn={setLoggedIn} />
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    )
 }
 
-export default Layout;
+export default Layout
