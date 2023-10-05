@@ -7,7 +7,7 @@ const skills = skillsData.map((skill) => {
 
 exports.seed = function (knex) {
     // Deletes ALL existing entries
-    return knex('skills')
+    return knex
         .raw("TRUNCATE TABLE skills RESTART IDENTITY CASCADE")
         .then(() => knex("skills").insert(skills))
 }

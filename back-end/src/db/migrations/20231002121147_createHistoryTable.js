@@ -7,10 +7,6 @@ exports.up = function (knex) {
             .references('user_id')
             .inTable('users')
         table.string('video_id').notNullable()
-        table
-            .foreign('video_id')
-            .references('video_id')
-            .inTable('videos')
         table.boolean('video_completed').defaultTo(0)
         table.timestamps(true, true)
     })
