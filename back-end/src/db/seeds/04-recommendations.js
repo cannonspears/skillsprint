@@ -5,7 +5,7 @@ recommendations.forEach((item) => {
 
 exports.seed = function (knex) {
     // Deletes ALL existing entries
-    return knex('recommendations')
+    return knex
         .raw("TRUNCATE TABLE recommendations RESTART IDENTITY CASCADE")
         .then(() => knex("recommendations").insert(recommendations))
 }

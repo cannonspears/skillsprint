@@ -5,7 +5,7 @@ embeddings.forEach((item) => {
 
 exports.seed = function (knex) {
     // Deletes ALL existing entries
-    return knex('embeddings')
+    return knex
         .raw("TRUNCATE TABLE embeddings RESTART IDENTITY CASCADE")
         .then(() => knex("embeddings").insert(embeddings))
 }
