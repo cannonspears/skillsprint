@@ -6,7 +6,11 @@ const knex = require('../db/connection')
     locate and return the desired video
 */
 function read(video_id) {
-    return knex('videos').select('*').where({ video_id }).first()
+    return knex('videos')
+        .select('*')
+        .where({ video_id })
+        .first()
+        .finally(() => knex.destroy())
 }
 
 module.exports = { read }
