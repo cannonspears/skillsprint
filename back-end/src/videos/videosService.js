@@ -1,29 +1,12 @@
 const knex = require('../db/connection')
 
-function create(videos) {
-    return knex('videos')
-        .insert(videos)
-        .returning('*')
-        .then((createdRecords) => createdRecords)
-}
-
+/*
+    My SQL is not currently good enough to both select and return stuff from inside a JSON
+    column, so this service should fetch the entire skills table and let the controller
+    locate and return the desired video
+*/
 function read(video_id) {
-    return knex('videos').select('*').where({ video_id }).first()
+    return knex('skills').select('*')
 }
 
-function list() {
-    return knex('videos').select('*')
-}
-
-function remove(video_id) {
-    return knex.transaction(function (trx) {
-        return trx('history')
-            .where({ video_id })
-            .del()
-            .then(() => {
-                return trx('videos').where({ video_id }).del()
-            })
-    })
-}
-
-module.exports = { create, read, list, remove }
+module.exports = { read }
