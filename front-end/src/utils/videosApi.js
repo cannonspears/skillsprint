@@ -1,10 +1,6 @@
 import axios from 'axios'
 import { skills } from './skills'
 
-for (let [key, value] of skills) {
-    console.log(key, value)
-}
-
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 // API CALLS //
