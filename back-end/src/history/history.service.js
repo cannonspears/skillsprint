@@ -10,7 +10,7 @@ function create(history) {
 function read(historyId) {
     return knex('history')
         .join('users', 'history.user_id', 'users.user_id')
-        .join('videos', 'history.video_id', 'videos.video_id')
+        .join('skills', 'history.video_id', 'skills.skill_videosvideo_id')
         .select('*')
         .where({ history_id: historyId })
         .first()

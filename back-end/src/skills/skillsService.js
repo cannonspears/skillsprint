@@ -1,9 +1,7 @@
 const knex = require('../db/connection')
 
 function read(skill_id) {
-    return knex('skills')
-        .select('skill_name', 'skill_videos')
-        .where({ skill_id })
+    return knex('videos').select('*').where({ skill_id })
 }
 
 function list() {
