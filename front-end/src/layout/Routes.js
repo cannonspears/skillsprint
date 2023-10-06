@@ -6,7 +6,7 @@ import NotFound from './NotFound'
 import Splash from './Splash'
 import Signin from './Signin'
 import CardsList from '../cards/CardsList'
-import VideoDisplay from '../content/videoDisplay'
+import VideoDisplay from '../content/VideoDisplay'
 
 /**
  * Defines all the routes for the application.
@@ -27,7 +27,7 @@ function Routes({ setLoggedIn }) {
             <Route path="/topic/:topic">
                 <CardsList />
             </Route>
-            <Route path="/video/:topic/:videoID">
+            <Route path="/video/:topic/:videoId">
                 <VideoDisplay />
             </Route>
             <Route>

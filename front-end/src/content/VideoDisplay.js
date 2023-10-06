@@ -3,7 +3,7 @@ import './VideoDisplay.css'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 
 function VideoDisplay({ video }) {
-    const { topic } = useParams()
+    const { topic, videoId } = useParams()
 
     // temportary static video
     video = {
@@ -29,7 +29,7 @@ function VideoDisplay({ video }) {
 
             <div class="videoWrapper">
                 <iframe
-                    src={`https://www.youtube.com/embed/${video.id.videoId}?si=OeHbx8DAyvGXLNIh`}
+                    src={`https://www.youtube.com/embed/${videoId}?si=OeHbx8DAyvGXLNIh`}
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
