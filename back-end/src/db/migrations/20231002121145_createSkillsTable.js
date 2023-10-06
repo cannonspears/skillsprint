@@ -1,8 +1,7 @@
 exports.up = function (knex) {
     return knex.schema.createTable('skills', (table) => {
-        table.increments('skill_id').primary()
+        table.integer('skill_id').primary()
         table.string('skill_name').notNullable()
-        table.json('skill_videos').notNullable()
         table.timestamps(true, true)
     })
 }
