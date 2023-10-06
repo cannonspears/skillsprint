@@ -24,7 +24,7 @@ function Menu({ loggedIn }) {
                     </h1>
                 </Link>
                 {loggedIn ? (
-                    <div>
+                    <>
                         <button
                             type="button"
                             className="btn btn-outline-info me-2"
@@ -37,7 +37,7 @@ function Menu({ loggedIn }) {
                         >
                             Log out
                         </button>
-                    </div>
+                    </>
                 ) : (
                     <div className="col-md-3 text-end">
                         <button

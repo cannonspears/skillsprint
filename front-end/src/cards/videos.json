@@ -1,20 +1,31 @@
 [
     {
         "title": "Video title",
+        "id": "qVGpKPEPme0",
         "destination": "#",
         "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        "thumb": "https://placehold.co/1280x720"
+        "thumb": "https://placehold.co/1280x720",
+        "length": "4",
+        "designation": "Beg."
     },
     {
         "title": "Video title",
+        "id": "tYv44wQYePg",
         "destination": "#",
         "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        "thumb": "https://placehold.co/1280x720"
+        "thumb": "https://placehold.co/1280x720",
+        "length": "12",
+        "designation": "Int.",
+        "status": "progress"
     },
     {
         "title": "Video title",
+        "id": "HnJ1bqXUnIM",
         "destination": "#",
         "desc": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        "thumb": "https://placehold.co/1280x720"
+        "thumb": "https://placehold.co/1280x720",
+        "length": "2",
+        "designation": "Adv.",
+        "status": "complete"
     }
 ]
