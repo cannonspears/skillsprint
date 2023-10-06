@@ -3,27 +3,31 @@ const { dataHas, userIdIsNumber } = require('./utils/validationFunctions')
 const asyncErrorHandler = require('../errors/asyncErrorHandler')
 
 async function historyExists(req, res, next) {
-    const historyId = Number(req.params.historyId)
-    const history = await service.read(historyId)
-    if (history) {
-        res.locals.history = history
-        next()
-    } else {
+    const history_id = Number(req.params.history_id)
+
+    const response = await service.read(history_id)
+
+    if (!response) {
         next({
             status: 404,
-            message: `Cannot find history. ID: ${historyId}`,
+            message: `Cannot find history with ID: ${history_id}`,
         })
     }
+
+    res.locals.history = response
+
+    next()
 }
 
 async function create(req, res) {
     const history = req.body.data
     const response = await service.create(history)
-    if (response) res.status(200).json({ data: response[0] })
+    res.status(200).json({ data: response })
 }
 
-function read(_req, res) {
+function read(req, res) {
     const { history } = res.locals
+    console.log('reading history')
     res.json({ data: history })
 }
 
@@ -67,6 +71,6 @@ module.exports = {
         dataHas('video_completed'),
         asyncErrorHandler(update),
     ],
-    delete: [asyncErrorHandler(historyExists), remove],
+    delete: [asyncErrorHandler(historyExists), asyncErrorHandler(remove)],
     list: [asyncErrorHandler(list)],
 }
