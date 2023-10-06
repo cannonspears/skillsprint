@@ -5,20 +5,14 @@ function create(user) {
         .insert(user)
         .returning('*')
         .then((createdRecords) => createdRecords[0])
-        .finally(() => knex.destroy())
 }
 
 function list() {
-    return knex('users')
-        .select('*')
-        .finally(() => knex.destroy())
+    return knex('users').select('*')
 }
 
 function read(user_id) {
-    return knex('users')
-        .where({ user_id })
-        .first()
-        .finally(() => knex.destroy())
+    return knex('users').where({ user_id }).first()
 }
 
 function update(user) {
@@ -29,7 +23,6 @@ function update(user) {
         .where({ user_id })
         .returning('*')
         .then((updatedRecords) => updatedRecords[0])
-        .finally(() => knex.destroy())
 }
 
 // Note: This method returns an integer represented the
@@ -37,21 +30,19 @@ function update(user) {
 // The transaction stuff is to delete from multiple tables at once
 // where the tables rely on the foreign key, "user_id"
 function remove(user_id) {
-    return knex
-        .transaction(function (trx) {
-            return trx('history')
-                .where({ user_id })
-                .del()
-                .then(() => {
-                    return trx('recommendations')
-                        .where({ user_id })
-                        .del()
-                        .then(() => {
-                            return trx('users').where({ user_id }).del()
-                        })
-                })
-        })
-        .finally(() => knex.destroy())
+    return knex.transaction(function (trx) {
+        return trx('history')
+            .where({ user_id })
+            .del()
+            .then(() => {
+                return trx('recommendations')
+                    .where({ user_id })
+                    .del()
+                    .then(() => {
+                        return trx('users').where({ user_id }).del()
+                    })
+            })
+    })
 }
 
 module.exports = { create, list, read, update, remove }
