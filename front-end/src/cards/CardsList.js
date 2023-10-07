@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './CardsList.css'
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import CardSingle from './CardSingle'
+import { fetchVideos } from '../utils/videosApi'
 
 function CardsList() {
     const { topic } = useParams(0)
-    const videos = require('./videos.json')
+    const [videos, setVideos] = useState(null)
+    async function getVideos(topic) {
+        const videosFromAPI = await fetchVideos(topic)
+        console.log('videosFromAPI')
+        console.log(videosFromAPI)
+        setVideos(videosFromAPI)
+    }
+
+    useEffect(function () {
+        getVideos(topic)
+    }, [])
+
     return (
         <>
             <h2>{topic}</h2>
             <div className="m-3 cardsList">
                 <br />
-                {videos.map((video) => {
-                    return <CardSingle video={video} topic={topic} />
-                })}
+                {videos &&
+                    videos.map((video) => {
+                        return <CardSingle video={video} topic={topic} />
+                    })}
             </div>
         </>
     )
