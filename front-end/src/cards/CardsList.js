@@ -6,20 +6,16 @@ import { fetchVideos } from '../utils/videosApi'
 
 function CardsList() {
     const { topic } = useParams(0)
-    // const videos = require('./videos.json')
-    const [videos, setVideos] = useState([])
-    async function loadVideos(topic) {
-        console.log("in loadVideos")
-        const result = await fetchVideos(topic)
-        console.log('result')
-        console.log(result)
-        setVideos(result)
+    const [videos, setVideos] = useState(null)
+    async function getVideos(topic) {
+        const videosFromAPI = await fetchVideos(topic)
+        console.log('videosFromAPI')
+        console.log(videosFromAPI)
+        setVideos(videosFromAPI)
     }
 
     useEffect(function () {
-        console.log('topic')
-        console.log(topic)
-        loadVideos(topic)
+        getVideos(topic)
     }, [])
 
     return (
@@ -27,9 +23,10 @@ function CardsList() {
             <h2>{topic}</h2>
             <div className="m-3 cardsList">
                 <br />
-                {videos.map((video) => {
-                    return <CardSingle video={video} topic={topic} />
-                })}
+                {videos &&
+                    videos.map((video) => {
+                        return <CardSingle video={video} topic={topic} />
+                    })}
             </div>
         </>
     )
