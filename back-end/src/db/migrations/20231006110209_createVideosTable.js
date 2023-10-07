@@ -5,6 +5,7 @@ exports.up = function (knex) {
         table.foreign('skill_id').references('skill_id').inTable('skills')
         table.string('title')
         table.string('description')
+        table.string('duration')
         table.string('channel')
         table.string('thumbnailUrl')
     })
