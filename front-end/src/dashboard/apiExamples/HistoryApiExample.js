@@ -7,7 +7,7 @@ import {
     deleteHistory,
 } from '../../utils/historyApi'
 
-export default function JeffHistoryApiTest() {
+export default function HistoryApiExample() {
     // Full Vid History
 
     const [fullHistory, setfullHistory] = useState(null)
