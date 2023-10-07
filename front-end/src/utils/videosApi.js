@@ -26,7 +26,7 @@ export async function fetchVideos(skillName = 'Time Management') {
     console.log(API_BASE_URL)
     try {
         const { data } = await axios.get(`${API_BASE_URL}/skills/${skill}`)
-        return data.data
+        return data
     } catch (error) {
         throw error
     }

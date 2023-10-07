@@ -3,7 +3,7 @@ const controller = require('./history.controller')
 const methodNotAllowed = require('../errors/methodNotAllowed')
 
 router
-    .route('/:historyId')
+    .route('/:history_id')
     .get(controller.read)
     .put(controller.update)
     .delete(controller.delete)
@@ -11,8 +11,8 @@ router
 
 router
     .route('/')
-    .get(controller.list)
     .post(controller.create)
+    .get(controller.list)
     .all(methodNotAllowed)
 
 module.exports = router

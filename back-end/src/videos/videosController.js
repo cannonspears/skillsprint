@@ -5,13 +5,13 @@ const asyncErrorHandler = require('../errors/asyncErrorHandler')
 async function checkVideoExists(req, res, next) {
     const { video_id } = req.params
 
-    const response = await service.read(video_id)
+    const video = await service.read(video_id)
 
-    if (!response) {
+    if (!video) {
         next({ status: 404, message: `Video with ID ${video_id} not found` })
     }
 
-    res.locals.video = response
+    res.locals.video = video
 
     next()
 }
@@ -19,7 +19,7 @@ async function checkVideoExists(req, res, next) {
 // Services //
 async function read(req, res) {
     const { video } = res.locals
-    res.json({ data: video })
+    res.json(video)
 }
 
 module.exports = {
