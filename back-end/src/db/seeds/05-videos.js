@@ -6,6 +6,7 @@ const videos = videosData.map((v) => {
         skill_id: v.skill_id,
         title: v.snippet.title,
         description: v.snippet.description,
+        duration: v.duration,
         channel: v.snippet.channelTitle,
         thumbnailUrl: v.snippet.thumbnails.default.url,
     }

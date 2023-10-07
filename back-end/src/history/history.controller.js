@@ -2,6 +2,19 @@ const service = require('./history.service')
 const { dataHas } = require('./utils/validationFunctions')
 const asyncErrorHandler = require('../errors/asyncErrorHandler')
 
+function historyIdIsNumber(req, res, next) {
+    const history_id = Number(req.params.history_id)
+    
+    if (isNaN(history_id)) {
+        next({
+            status: 400,
+            message: "Expected history ID to be a number."
+        })
+    }
+
+    next()
+}
+
 async function userDoesNotHaveVideoAlready(req, res, next) {
     const { user_id } = req.params
 
@@ -84,7 +97,7 @@ module.exports = {
         asyncErrorHandler(userDoesNotHaveVideoAlready),
         asyncErrorHandler(create),
     ],
-    read: [asyncErrorHandler(historyExists), read],
+    read: [historyIdIsNumber, asyncErrorHandler(historyExists), read],
     update: [
         asyncErrorHandler(historyExists),
         dataHas('video_completed'),

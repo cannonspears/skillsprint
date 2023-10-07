@@ -8,7 +8,6 @@ function create(history) {
 }
 
 function read(history_id) {
-    console.log(history_id)
     return knex('history as h')
         .join('videos as v', 'h.video_id', 'v.video_id')
         .select('h.history_id', 'h.user_id', 'v.video_id', 'h.video_completed')

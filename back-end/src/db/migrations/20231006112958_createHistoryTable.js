@@ -4,7 +4,6 @@ exports.up = function (knex) {
         table.integer('user_id').unsigned()
         table.foreign('user_id').references('user_id').inTable('users')
         table.string('video_id')
-        table.foreign('video_id').references('video_id').inTable('videos')
         table.boolean('video_completed').defaultTo(0)
         table.timestamps(true, true)
     })
