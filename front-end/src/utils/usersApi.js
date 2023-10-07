@@ -100,7 +100,7 @@ export async function updateUser(user) {
     }
 }
 
-export async function removeUser(user_id) {
+export async function deleteUser(user_id) {
     try {
         await axios.delete(`${API_BASE_URL}/users/${user_id}`)
     } catch (error) {

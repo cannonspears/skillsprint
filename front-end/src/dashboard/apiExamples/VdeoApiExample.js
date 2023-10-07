@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { fetchVideo, fetchVideos } from '../../utils/videosApi'
 
-export default function JeffApiTest() {
+export default function VideoApiExample() {
     const [video, setVideo] = useState(null)
     const getVideo = async (e) => {
         e.preventDefault()
