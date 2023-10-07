@@ -14,12 +14,12 @@ async function checkSkillExists(req, res, next) {
 // Services //
 async function read(req, res) {
     const { skill } = res.locals
-    res.json({ data: skill })
+    res.json(skill)
 }
 
 async function list(req, res) {
     const skills = await service.list()
-    res.send({ data: skills })
+    res.send(skills)
 }
 
 module.exports = {
