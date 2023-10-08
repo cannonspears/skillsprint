@@ -7,6 +7,7 @@ function Splash() {
     return (
         <div className="splash">
             <div className="introContainer">
+
                 <h1>
                     Unlock Your Potential with SkillSprint: Learn, Earn, and
                     Grow!
@@ -22,7 +23,13 @@ function Splash() {
             </div>
             <div className="splashImgContainer">
                 <img src={splashImg} alt={'SkillSprint Splash'} />
+
+                
+
             </div>
+            
+                <img src={splashImg} className="splashImg" alt={'SkillSprint Splash'} />
+            
         </div>
     )
 }

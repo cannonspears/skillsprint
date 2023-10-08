@@ -5,30 +5,30 @@ function CardSingle({ video, topic }) {
     return (
         <>
             <div className="card">
-                <Link to={`/video/${topic}/${video.id}`}>
-                    <img src={video.thumb} className="card-img-top" alt="..." />
+                <Link to={`/video/${topic}/${video.video_id}`}>
+                    <img src={video.thumbnailUrl} className="card-img-top" alt="..." />
                     <div className="card-body">
-                        <h5 class="card-title">{video.title}</h5>
+                        <h5 className="card-title">{video.title}</h5>
                         <p className="card-text">
-                            THis video is about: {video.desc}
+                            {video.description}
                         </p>
                     </div>
                 </Link>
                 <footer className="card-footer">
-                    <div class="dot-cont">
+                    <div className="dot-cont">
                         <span className="dot"></span>
-                        <p>{video.length} min</p>
+                        <p>XX min</p>
                     </div>
-                    <div class="dot-cont">
+                    <div className="dot-cont">
                         <span className="dot"></span>
-                        <p>{video.designation}</p>
+                        <p>Beg.</p>
                     </div>
                     {video.status === 'complete' ? (
-                        <span class="badge rounded-pill text-bg-success">
+                        <span className="badge rounded-pill text-bg-success">
                             Completed
                         </span>
                     ) : (
-                        <span class="badge rounded-pill text-success">
+                        <span className="badge rounded-pill text-success">
                             Mark completed
                         </span>
                     )}

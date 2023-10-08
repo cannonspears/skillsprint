@@ -1,30 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './VideoDisplay.css'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import { fetchVideo } from '../utils/videosApi'
 
-function VideoDisplay({ video }) {
+function VideoDisplay() {
     const { topic, videoId } = useParams()
-
-    // temportary static video
-    video = {
-        id: { videoId: 'WXBA4eWskrc' },
-        snippet: {
-            title: 'The Philosophy of Time Management | Brad Aeon | TEDxConcordia',
-            description:
-                'You are going to die eventually. Will you fill whatever lifetime you have left with so-called time management techniques and ...',
-            thumbnails: {
-                default: {
-                    url: 'https://i.ytimg.com/vi/WXBA4eWskrc/default.jpg',
-                    width: 120,
-                    height: 90,
-                },
-            },
-            channelTitle: 'TEDx Talks',
-        },
+    const [video, setVideo] = useState(null)
+    const getVideo = async (video_id) => {
+        const videoFromApi = await fetchVideo(video_id)
+        setVideo(videoFromApi)
     }
+
+    useEffect(function () {
+        getVideo(videoId)
+    }, [])
+
     return (
         <>
-            <h5>My Skills | {topic}</h5>
+            {video ? <p>Video returned</p> : <p>Video not returned </p>}
+            {/* <h5>My Skills | {topic}</h5>
             <h2>{video.snippet.title}</h2>
 
             <div class="videoWrapper">
@@ -35,7 +29,7 @@ function VideoDisplay({ video }) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
                 ></iframe>
-            </div>
+            </div> */}
         </>
     )
 }
