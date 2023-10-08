@@ -7,6 +7,7 @@ import Signin from './Signin'
 import CardsList from '../cards/CardsList'
 import VideoDisplay from '../content/VideoDisplay'
 import Explore from './Explore/Explore'
+import MySkills from './MySkills/MySkills'
 
 /**
  * Defines all the routes for the application.
@@ -29,6 +30,9 @@ function Routes({ setLoggedIn }) {
             </Route>
             <Route path="/video/:topic/:videoId">
                 <VideoDisplay />
+            </Route>
+            <Route path="/myskills">
+                <MySkills />
             </Route>
             <Route>
                 <NotFound />
