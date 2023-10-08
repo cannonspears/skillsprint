@@ -17,7 +17,23 @@ function VideoDisplay() {
 
     return (
         <>
-            {video ? <p>Video returned</p> : <p>Video not returned </p>}
+            {video ? (
+                <>
+                    <h5>My Skills | {topic}</h5>
+                    <h2>{video.title}</h2>
+                    <div class="videoWrapper">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${videoId}?si=OeHbx8DAyvGXLNIh`}
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>{' '}
+                </>
+            ) : (
+                <p>Video not returned </p>
+            )}
             {/* <h5>My Skills | {topic}</h5>
             <h2>{video.snippet.title}</h2>
 
