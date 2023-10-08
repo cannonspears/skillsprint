@@ -1,6 +1,5 @@
 .splash {
     display: flex;
-    justify-content: center;
 }
 
 .splash .introContainer {
@@ -8,9 +7,9 @@
     flex-direction: column;
     gap: 1rem;
     justify-content: flex-start;
-    max-width: 30vw;
-    margin-top: 20vh;
-    margin-bottom: 20vh;
+    max-width: 50%;
+}
+.introContainer .messageBox {
 }
 
 .splash .introContainer h1 {
@@ -30,11 +29,11 @@
     width: 60%;
 }
 
-.splash .splashImgContainer {
-    display: flex;
-    max-width: 60vw;
-}
-
-.splash .splashImgContainer img {
-    width: 100%;
+.splashImg {
+    width: 50%;
+    z-index: -100;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 730px;
 }
