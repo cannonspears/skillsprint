@@ -1,0 +1,13 @@
+.progress {
+    background-color: #f3f3f3;
+    height: 100%;
+}
+
+.progress ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+

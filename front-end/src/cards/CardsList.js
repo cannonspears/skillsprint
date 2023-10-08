@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './CardsList.css'
-import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import CardSingle from './CardSingle'
-import { fetchVideos } from '../utils/videosApi'
+import { fetchVideosByName } from '../utils/videosApi'
 
 function CardsList() {
     const { topic } = useParams(0)
     const [videos, setVideos] = useState(null)
     async function getVideos(topic) {
-        const videosFromAPI = await fetchVideos(topic)
+        const videosFromAPI = await fetchVideosByName(topic)
         console.log('videosFromAPI')
         console.log(videosFromAPI)
         setVideos(videosFromAPI)

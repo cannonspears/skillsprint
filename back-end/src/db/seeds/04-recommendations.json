@@ -1,6 +1,6 @@
 [
     {
-        "user_id":1,
+        "user_id": 1,
         "videos": [
             "WXBA4eWskrc",
             "2Yw6dFQBklA",
@@ -10,7 +10,7 @@
         ]
     },
     {
-        "user_id":1,
+        "user_id": 1,
         "videos": [
             "XpKvs-apvOs",
             "qVGpKPEPme0",
@@ -20,7 +20,7 @@
         ]
     },
     {
-        "user_id":2,
+        "user_id": 2,
         "videos": [
             "XpKvs-apvOs",
             "LgUCyWhJf6s",
@@ -30,7 +30,7 @@
         ]
     },
     {
-        "user_id":3,
+        "user_id": 3,
         "videos": [
             "WXBA4eWskrc",
             "2Yw6dFQBklA",
@@ -40,7 +40,7 @@
         ]
     },
     {
-        "user_id":4,
+        "user_id": 4,
         "videos": [
             "XpKvs-apvOs",
             "LgUCyWhJf6s",

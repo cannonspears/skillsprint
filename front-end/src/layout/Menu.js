@@ -1,7 +1,6 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
-import sprinterLogo from '../img/sprinter-300.png'
+import logo from '../img/Logo.png'
 import './Menu.css'
 
 /**
@@ -12,47 +11,44 @@ import './Menu.css'
 
 function Menu({ loggedIn }) {
     return (
-        <div className="container">
-            <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <Link
-                    to="/#"
-                    className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
-                >
-                    <h1>
-                        <img src={sprinterLogo} />
-                        SkillSprint
-                    </h1>
+        <header>
+            <h1>
+                <img src={logo} alt="skillSprint" />
+                <Link to="/explore">
+                    <button>
+                        <h1>SkillSprint</h1>
+                    </button>
                 </Link>
-                {loggedIn ? (
-                    <>
-                        <button
-                            type="button"
-                            className="btn btn-outline-info me-2"
-                        >
-                            Help
-                        </button>
-                        <button
-                            type="button"
-                            className="btn btn-outline-primary me-2"
-                        >
-                            Log out
-                        </button>
-                    </>
-                ) : (
-                    <div className="col-md-3 text-end">
-                        <button
-                            type="button"
-                            className="btn btn-outline-primary me-2"
-                        >
-                            Register
-                        </button>
-                        <button type="button" className="btn btn-primary">
-                            Login
-                        </button>
+            </h1>
+
+            {loggedIn ? (
+                <>
+                    <div className="hLinks">
+                        <Link to="myskills">
+                            <button type="button">My Skills</button>
+                        </Link>
+                        <Link to="explore">
+                            <button type="button">Explore</button>
+                        </Link>
                     </div>
-                )}
-            </header>
-        </div>
+                    <div className="hUser">
+                        <p className="userInitial">A</p>
+                        <p>April Fools</p>
+                    </div>
+                </>
+            ) : (
+                <div>
+                    <Link to="/signin">
+                        <button type="button" className="hLogIn">
+                            Log In
+                        </button>
+                    </Link>
+                    <button type="button" className="hSignUp">
+                        Sign Up
+                    </button>
+                </div>
+            )}
+        </header>
     )
 }
 
