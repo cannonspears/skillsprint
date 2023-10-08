@@ -1,26 +1,114 @@
 [
-    { "skill_name": "Time Management", "skill_id": 0 },
-    { "skill_name": "Goal Setting", "skill_id": 1 },
-    { "skill_name": "Emotional Intelligence", "skill_id": 2 },
-    { "skill_name": "Stress Management", "skill_id": 3 },
-    { "skill_name": "Critical Thinking", "skill_id": 4 },
-    { "skill_name": "Self-Discipline", "skill_id": 5 },
-    { "skill_name": "Financial Literacy", "skill_id": 6 },
-    { "skill_name": "Networking", "skill_id": 7 },
-    { "skill_name": "Public Speaking", "skill_id": 8 },
-    { "skill_name": "Negotiation Skills", "skill_id": 9 },
-    { "skill_name": "Conflict Resolution", "skill_id": 10 },
-    { "skill_name": "Adaptability", "skill_id": 11 },
-    { "skill_name": "Mindfulness and Meditation", "skill_id": 12 },
-    { "skill_name": "Leadership", "skill_id": 13 },
-    { "skill_name": "Creativity", "skill_id": 14 },
-    { "skill_name": "Learning How to Learn", "skill_id": 15 },
-    { "skill_name": "Physical Fitness", "skill_id": 16 },
-    { "skill_name": "Organization Skills", "skill_id": 17 },
-    { "skill_name": "Resilience", "skill_id": 18 },
-    { "skill_name": "Decision Making", "skill_id": 19 },
-    { "skill_name": "Empathy", "skill_id": 20 },
-    { "skill_name": "Self-Reflection", "skill_id": 21 },
-    { "skill_name": "Conflict Management", "skill_id": 22 },
-    { "skill_name": "Hobby Development", "skill_id": 23 }
+    {
+        "skill_name": "Time Management",
+        "skill_id": 0,
+        "description": "Efficiently allocate and prioritize your time."
+    },
+    {
+        "skill_name": "Goal Setting",
+        "skill_id": 1,
+        "description": "Set realistic goals and work towards success."
+    },
+    {
+        "skill_name": "Emotional Intelligence",
+        "skill_id": 2,
+        "description": "Understand the feelings that you and others around you experience."
+    },
+    {
+        "skill_name": "Stress Management",
+        "skill_id": 3,
+        "description": "Relieve stress through management and prevention techniques."
+    },
+    {
+        "skill_name": "Critical Thinking",
+        "skill_id": 4,
+        "description": "Evaluate and organize your thought process."
+    },
+    {
+        "skill_name": "Self-Discipline",
+        "skill_id": 5,
+        "description": "Navigate your impulses and your higher aspirations."
+    },
+    {
+        "skill_name": "Financial Literacy",
+        "skill_id": 6,
+        "description": "Budgeting, balancing your books, making good decisions."
+    },
+    {
+        "skill_name": "Networking",
+        "skill_id": 7,
+        "description": "Develop and maintain professional relationships."
+    },
+    {
+        "skill_name": "Public Speaking",
+        "skill_id": 8,
+        "description": "Confront your fears and deliver mind-blowing presentations."
+    },
+    {
+        "skill_name": "Negotiation Skills",
+        "skill_id": 9,
+        "description": "Understand the psychology of getting what you want and giving others what they need."
+    },
+    {
+        "skill_name": "Conflict Resolution",
+        "skill_id": 10,
+        "description": "Reconcile differences between the members of your team."
+    },
+    {
+        "skill_name": "Adaptability",
+        "skill_id": 11,
+        "description": "The branch breaks while the reed bends."
+    },
+    {
+        "skill_name": "Mindfulness and Meditation",
+        "skill_id": 12,
+        "description": "Relieve stress, improve focus and memory."
+    },
+    {
+        "skill_name": "Leadership",
+        "skill_id": 13,
+        "description": "Develop leadership qualities and lead by example."
+    },
+    {
+        "skill_name": "Creativity",
+        "skill_id": 14,
+        "description": "Unleash our creativity to create creative creativeness."
+    },
+    {
+        "skill_name": "Learning How to Learn",
+        "skill_id": 15,
+        "description": "Learn how to learn."
+    },
+    {
+        "skill_name": "Physical Fitness",
+        "skill_id": 16,
+        "description": "Invest in your health through regular exercise."
+    },
+    {
+        "skill_name": "Organization Skills",
+        "skill_id": 17,
+        "description": "Organize your tasks for increased productivity."
+    },
+    { "skill_name": "Resilience", "skill_id": 18, "description": "Be strong." },
+    {
+        "skill_name": "Decision Making",
+        "skill_id": 19,
+        "description": "Decide."
+    },
+    { "skill_name": "Empathy", "skill_id": 20, "description": "Empathize." },
+    {
+        "skill_name": "Self-Reflection",
+        "skill_id": 21,
+        "description": "Reflect on yourself."
+    },
+    {
+        "skill_name": "Conflict Management",
+        "skill_id": 22,
+        "description": "Manage conflicts."
+    },
+    {
+        "skill_name": "Hobby Development",
+        "skill_id": 23,
+        "description": "Develop hobbies."
+    }
 ]

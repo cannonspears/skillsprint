@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import NotFound from './NotFound'
 import Splash from './Splash'
 import Signin from './Signin'
 import CardsList from '../cards/CardsList'
 import VideoDisplay from '../content/VideoDisplay'
-import Explore from './Explore'
+import Explore from './Explore/Explore'
 
 /**
  * Defines all the routes for the application.
