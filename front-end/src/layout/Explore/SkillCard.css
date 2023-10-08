@@ -1,0 +1,23 @@
+.skillCard {
+    border: 2px solid #8da6a1;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.skillCard img {
+    width: 350px;
+    height: 350px;
+}
+
+.skillCard .skillInfo img {
+    width: 25px;
+    height: 25px;
+}
+
+.skillCard button {
+    color: white;
+    background-color: #e3852e;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem;
+}

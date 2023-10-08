@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchAllVideos } from '../utils/videosApi'
+import { fetchAllVideos } from '../../utils/videosApi'
 import SkillCard from './SkillCard'
 import './Explore.css'
 
@@ -20,7 +20,7 @@ export default function Explore() {
             {!skillVids ? (
                 <p>Loading Skills...</p>
             ) : (
-                <ul>
+                <ul className="explore">
                     {skillVids.map((videos) => {
                         return (
                             <li key={`skill-${videos[0].skill_id}`}>
