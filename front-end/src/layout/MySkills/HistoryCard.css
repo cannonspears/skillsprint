@@ -1,0 +1,22 @@
+.historyCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 25%;
+    background-color: white;
+}
+
+.historyCard .top {
+    display: flex;
+}
+
+.historyCard .top .completionCircle {
+    display: flex;
+    background-color: #f3e5d8;
+    border: 5px solid #e3852e;
+    border-radius: 50%;
+}
+
+.historyCard .bottom {
+    display: flex;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './CardsList.css'
-import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import CardSingle from './CardSingle'
 import { fetchVideosByName } from '../utils/videosApi'
 
