@@ -6,10 +6,10 @@ import InProgress from './InProgress'
 import Completed from './Completed'
 import './MySkills.css'
 
-export default function MySkills({ userSkills }) {
+export default function MySkills({ user, history }) {
     return (
         <div className="mySkills">
-            <Completion />
+            <Completion user={user} history={history} />
             <SubMenu />
             <Switch>
                 <Route path="/todo">
