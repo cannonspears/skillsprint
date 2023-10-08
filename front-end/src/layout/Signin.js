@@ -1,9 +1,8 @@
 import React from 'react'
 import './Signin.css'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
-import sprinterLogo from '../img/sprinter-300.png'
 
-function Signin() {
+function Signin({ setLoggedIn }) {
     return (
         <main className="form-signin text-center">
             <form>
@@ -34,8 +33,11 @@ function Signin() {
                         me
                     </label>
                 </div>
-                <Link to="/dashboard">
-                    <button className="w-100 btn btn-lg btn-primary">
+                <Link to="/explore">
+                    <button
+                        onClick={() => setLoggedIn(true)}
+                        className="w-100 btn btn-lg btn-primary"
+                    >
                         Sign in
                     </button>
                 </Link>

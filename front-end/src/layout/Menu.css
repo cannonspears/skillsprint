@@ -1,3 +1,15 @@
+header {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #32a58e;
+}
+
+header button {
+    border: none;
+    background: none;
+}
+
 header img {
     max-width: 50px;
     margin-right: 1rem;
@@ -24,4 +36,29 @@ header .hSignUp {
     width: 175px;
     height: 40px;
     margin-left: 1rem;
+}
+
+header .hUser {
+    display: flex;
+    gap: 1rem;
+}
+
+header .hUser .userInitial {
+    background: #6bc1b0;
+    border-radius: 50%;
+    color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+header .hLinks {
+    display: flex;
+    gap: 3rem;
+    align-content: flex-end;
+}
+
+header .hLinks button {
+    background: white;
+    border: none;
 }
