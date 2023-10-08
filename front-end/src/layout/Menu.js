@@ -24,7 +24,7 @@ function Menu({ loggedIn }) {
             {loggedIn ? (
                 <>
                     <div className="hLinks">
-                        <Link to="/myskills">
+                        <Link to="myskills">
                             <button type="button">My Skills</button>
                         </Link>
                         <Link to="explore">
@@ -38,7 +38,7 @@ function Menu({ loggedIn }) {
                 </>
             ) : (
                 <div>
-                    <Link to="signin">
+                    <Link to="/signin">
                         <button type="button" className="hLogIn">
                             Log In
                         </button>

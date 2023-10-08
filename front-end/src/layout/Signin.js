@@ -33,7 +33,7 @@ function Signin({ setLoggedIn }) {
                         me
                     </label>
                 </div>
-                <Link to="/explore">
+                <Link to="/myskills">
                     <button
                         onClick={() => setLoggedIn(true)}
                         className="w-100 btn btn-lg btn-primary"
