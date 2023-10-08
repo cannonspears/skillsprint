@@ -12,14 +12,14 @@ import VideoDisplay from '../content/VideoDisplay'
  * Defines all the routes for the application.
  * @returns {JSX.Element}
  */
-function Routes({ setLoggedIn }) {
+function Routes() {
     return (
         <Switch>
             <Route exact={true} path="/">
                 <Splash />
             </Route>
             <Route exact={true} path="/signin">
-                <Signin setLoggedIn={setLoggedIn} />
+                <Signin />
             </Route>
             <Route path="/dashboard">
                 <Dashboard />

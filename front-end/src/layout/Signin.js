@@ -3,22 +3,11 @@ import './Signin.css'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import sprinterLogo from '../img/sprinter-300.png'
 
-function Signin({ setLoggedIn }) {
-    const handleSignIn = () => {
-        setLoggedIn(true)
-    }
-
+function Signin() {
     return (
         <main className="form-signin text-center">
             <form>
-                <img
-                    className="mb-4"
-                    src={sprinterLogo}
-                    alt=""
-                    width="72"
-                    height="57"
-                />
-                <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+                <h1>Unock Your Potential with SkillSprint!</h1>
 
                 <div className="form-floating">
                     <input
@@ -46,11 +35,7 @@ function Signin({ setLoggedIn }) {
                     </label>
                 </div>
                 <Link to="/dashboard">
-                    <button
-                        className="w-100 btn btn-lg btn-primary"
-                        type="submit"
-                        onClick={handleSignIn}
-                    >
+                    <button className="w-100 btn btn-lg btn-primary">
                         Sign in
                     </button>
                 </Link>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import sprinterLogo from '../img/sprinter-300.png'
+import logo from '../img/Logo.png'
 import './Menu.css'
 
 /**
@@ -19,7 +19,7 @@ function Menu({ loggedIn }) {
                     className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
                 >
                     <h1>
-                        <img src={sprinterLogo} />
+                        <img src={logo} />
                         SkillSprint
                     </h1>
                 </Link>
@@ -39,15 +39,14 @@ function Menu({ loggedIn }) {
                         </button>
                     </>
                 ) : (
-                    <div className="col-md-3 text-end">
-                        <button
-                            type="button"
-                            className="btn btn-outline-primary me-2"
-                        >
-                            Register
-                        </button>
-                        <button type="button" className="btn btn-primary">
-                            Login
+                    <div>
+                        <Link to="signin">
+                            <button type="button" className="hLogIn">
+                                Log In
+                            </button>
+                        </Link>
+                        <button type="button" className="hSignUp">
+                            Sign Up
                         </button>
                     </div>
                 )}

@@ -5,6 +5,8 @@ exports.up = function (knex) {
         table.foreign('user_id').references('user_id').inTable('users')
         table.string('video_id')
         table.boolean('video_completed').defaultTo(0)
+        table.integer('skill_id')
+        table.foreign('skill_id').references('skill_id').inTable('skills')
         table.timestamps(true, true)
     })
 }

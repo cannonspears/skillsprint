@@ -16,7 +16,9 @@ function Splash() {
                     acquire new skills, achieve your goals, and embark on a
                     journey of self-improvement like never before.
                 </h2>
-                <button>Sign Up For Free</button>
+                <Link to="/signin">
+                    <button>Sign Up For Free</button>
+                </Link>
             </div>
             <div className="splashImgContainer">
                 <img src={splashImg} alt={'SkillSprint Splash'} />
