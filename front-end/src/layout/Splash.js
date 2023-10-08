@@ -7,18 +7,25 @@ function Splash() {
     return (
         <div className="splash">
             <div className="introContainer">
-                <div className='messageBox'>
-                    <h1>
-                        Unlock Your Potential with SkillSprint: Learn, Earn, and
-                        Grow!
-                    </h1>
-                    <h2>
-                        Dive into a revolutionary website that empowers you to
-                        acquire new skills, achieve your goals, and embark on a
-                        journey of self-improvement like never before.
-                    </h2>
+
+                <h1>
+                    Unlock Your Potential with SkillSprint: Learn, Earn, and
+                    Grow!
+                </h1>
+                <h2>
+                    Dive into a revolutionary website that empowers you to
+                    acquire new skills, achieve your goals, and embark on a
+                    journey of self-improvement like never before.
+                </h2>
+                <Link to="/signin">
                     <button>Sign Up For Free</button>
-                </div>
+                </Link>
+            </div>
+            <div className="splashImgContainer">
+                <img src={splashImg} alt={'SkillSprint Splash'} />
+
+                
+
             </div>
             
                 <img src={splashImg} className="splashImg" alt={'SkillSprint Splash'} />

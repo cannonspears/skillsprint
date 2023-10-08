@@ -1,3 +1,27 @@
 header img {
     max-width: 50px;
+    margin-right: 1rem;
+}
+
+header h1 {
+    color: #32a58e;
+}
+
+header .hLogIn {
+    color: black;
+    background-color: white;
+    border-radius: 2rem;
+    border: 1px solid #e3852e;
+    width: 175px;
+    height: 40px;
+}
+
+header .hSignUp {
+    color: white;
+    background-color: #e3852e;
+    border-radius: 2rem;
+    border: 1px solid #e3852e;
+    width: 175px;
+    height: 40px;
+    margin-left: 1rem;
 }

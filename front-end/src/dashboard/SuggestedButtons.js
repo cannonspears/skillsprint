@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
 import './SuggestedButtons.css'
 import SuggestedButtonSingle from './SuggestedButtonSingle'
 

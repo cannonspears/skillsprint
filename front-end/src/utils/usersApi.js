@@ -107,3 +107,5 @@ export async function deleteUser(user_id) {
         console.log(error)
     }
 }
+
+

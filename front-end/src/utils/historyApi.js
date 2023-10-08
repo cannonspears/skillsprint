@@ -65,3 +65,31 @@ export async function deleteHistory(user_id, history_id) {
         throw error
     }
 }
+
+// Stuff to calculate points //
+export async function getUserPointsPerSkill(user_id = null, history = null) {
+    if (!history) {
+        var history = await fetchFullHistory(user_id)
+    }
+
+    const userPointsMap = new Map()
+
+    history.forEach((item) => {
+        const { skill_id, video_completed } = item
+        if (userPointsMap.has(skill_id)) {
+            if (video_completed) {
+                userPointsMap.set(skill_id, userPointsMap.get(skill_id) + 10)
+            }
+        } else {
+            userPointsMap.set(skill_id, 10)
+        }
+    })
+
+    const userPoints = []
+
+    for (let [key, value] of userPointsMap.entries()) {
+        userPoints.push([key, value])
+    }
+
+    return userPoints
+}

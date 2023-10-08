@@ -1,42 +1,52 @@
 [
     {
-        "user_id":1,
-        "video_id":"WXBA4eWskrc"
+        "user_id": 1,
+        "video_id": "WXBA4eWskrc",
+        "skill_id": 0
     },
     {
-        "user_id":1,
-        "video_id":"XpKvs-apvOs"
+        "user_id": 1,
+        "video_id": "XpKvs-apvOs",
+        "skill_id": 1
     },
     {
-        "user_id":2,
-        "video_id":"2Yw6dFQBklA"
+        "user_id": 2,
+        "video_id": "2Yw6dFQBklA",
+        "skill_id": 1
     },
     {
-        "user_id":2,
-        "video_id":"LgUCyWhJf6s"
+        "user_id": 2,
+        "video_id": "LgUCyWhJf6s",
+        "skill_id": 2
     },
     {
-        "user_id":3,
-        "video_id":"qVGpKPEPme0"
+        "user_id": 3,
+        "video_id": "qVGpKPEPme0",
+        "skill_id": 3
     },
     {
-        "user_id":3,
-        "video_id":"dItUGF8GdTw"
+        "user_id": 3,
+        "video_id": "dItUGF8GdTw",
+        "skill_id": 4
     },
     {
-        "user_id":4,
-        "video_id":"mPbAwFGjnko"
+        "user_id": 4,
+        "video_id": "mPbAwFGjnko",
+        "skill_id": 5
     },
     {
-        "user_id":4,
-        "video_id":"4XZIv4__sQA"
+        "user_id": 4,
+        "video_id": "4XZIv4__sQA",
+        "skill_id": 6
     },
     {
-        "user_id":5,
-        "video_id":"-30m8D6gTrg"
+        "user_id": 5,
+        "video_id": "-30m8D6gTrg",
+        "skill_id": 7
     },
     {
-        "user_id":5,
-        "video_id":"Ns_z4wEtdRM"
+        "user_id": 5,
+        "video_id": "Ns_z4wEtdRM",
+        "skill_id": 8
     }
 ]
