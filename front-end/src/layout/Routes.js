@@ -1,28 +1,28 @@
 import React from 'react'
 
 import { Redirect, Route, Switch } from 'react-router-dom'
-import Dashboard from '../dashboard/Dashboard'
 import NotFound from './NotFound'
 import Splash from './Splash'
 import Signin from './Signin'
 import CardsList from '../cards/CardsList'
 import VideoDisplay from '../content/VideoDisplay'
+import Explore from './Explore'
 
 /**
  * Defines all the routes for the application.
  * @returns {JSX.Element}
  */
-function Routes() {
+function Routes({ setLoggedIn }) {
     return (
         <Switch>
             <Route exact={true} path="/">
                 <Splash />
             </Route>
             <Route exact={true} path="/signin">
-                <Signin />
+                <Signin setLoggedIn={setLoggedIn} />
             </Route>
-            <Route path="/dashboard">
-                <Dashboard />
+            <Route path="/explore">
+                <Explore />
             </Route>
             <Route path="/topic/:topic">
                 <CardsList />
