@@ -22,6 +22,12 @@ async function read(req, res) {
     res.json(video)
 }
 
+async function list(req, res) {
+    const data = await service.list()
+    res.json(data)
+}
+
 module.exports = {
     read: [asyncErrorHandler(checkVideoExists), read],
+    list: [asyncErrorHandler(list)],
 }

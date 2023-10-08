@@ -1,4 +1,10 @@
-export const skills = new Map([
+import leader from '../img/leader.png'
+import fitness from '../img/fitness.png'
+import Network from '../img/Network.png'
+import Organization from '../img/Organization.png'
+import timeManage from '../img/timeManage.png'
+
+export const skillMap = new Map([
     ['Time Management', 0],
     ['Goal Setting', 1],
     ['Emotional Intelligence', 2],
@@ -25,7 +31,7 @@ export const skills = new Map([
     ['Hobby Development', 23],
 ])
 
-export const revSkills = new Map([
+export const revSkillMap = new Map([
     [0, 'Time Management'],
     [1, 'Goal Setting'],
     [2, 'Emotional Intelligence'],
@@ -50,4 +56,31 @@ export const revSkills = new Map([
     [21, 'Self-Reflection'],
     [22, 'Conflict Management'],
     [23, 'Hobby Development'],
+])
+
+export const skillImageMap = new Map([
+    [0, timeManage],
+    [1, leader],
+    [2, leader],
+    [3, fitness],
+    [4, Organization],
+    [5, fitness],
+    [6, leader],
+    [7, Network],
+    [8, leader],
+    [9, Network],
+    [10, Network],
+    [11, timeManage],
+    [12, fitness],
+    [13, leader],
+    [14, Organization],
+    [15, Organization],
+    [16, fitness],
+    [17, Organization],
+    [18, fitness],
+    [19, leader],
+    [20, Network],
+    [21, timeManage],
+    [22, Network],
+    [23, fitness],
 ])
