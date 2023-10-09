@@ -2,6 +2,7 @@ header {
     margin: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     border-bottom: 1px solid #32a58e;
 }
 
@@ -10,13 +11,16 @@ header button {
     background: none;
 }
 
+
 header img {
     max-width: 50px;
     margin-right: 1rem;
+    vertical-align: top;
 }
 
 header h1 {
     color: #32a58e;
+    margin-bottom: 0;
 }
 
 header .hLogIn {
@@ -56,9 +60,17 @@ header .hLinks {
     display: flex;
     gap: 3rem;
     align-content: flex-end;
+    transform: translateX(-50%);
 }
 
 header .hLinks button {
     background: white;
     border: none;
+}
+header .hLinks button:hover {
+    border-bottom: 3px solid #e3852e;
+}
+
+header .hLinks .active {
+    border-bottom: 3px solid #32a58e;
 }

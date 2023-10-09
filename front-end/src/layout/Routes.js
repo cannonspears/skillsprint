@@ -13,7 +13,7 @@ import { fetchFullHistory } from '../utils/historyApi'
  * Defines all the routes for the application.
  * @returns {JSX.Element}
  */
-function Routes({ setLoggedIn, user }) {
+function Routes({ setLoggedIn, user, setActivePage }) {
     const [history, setHistory] = useState(null)
 
     useEffect(() => {
@@ -36,7 +36,7 @@ function Routes({ setLoggedIn, user }) {
                 <Signin setLoggedIn={setLoggedIn} />
             </Route>
             <Route path="/explore">
-                <Explore history={history}/>
+                <Explore history={history} setActivePage={setActivePage}/>
             </Route>
             <Route path="/topic/:topic">
                 <CardsList history={history}/>
@@ -45,7 +45,7 @@ function Routes({ setLoggedIn, user }) {
                 <VideoDisplay />
             </Route>
             <Route path="/myskills">
-                <MySkills user={user} history={history} />
+                <MySkills user={user} history={history} setActivePage={setActivePage} />
             </Route>
             <Route>
                 <NotFound />

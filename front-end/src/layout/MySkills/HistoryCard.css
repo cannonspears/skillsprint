@@ -19,10 +19,12 @@
     flex-direction: column;
     justify-content: center;
     background-color: #f3e5d8;
-    border: 5px solid #e3852e;
+    border: 5px solid transparent;
     border-radius: 50%;
     padding: 0.5rem;
     padding-bottom: 0.75rem;
+    background: linear-gradient(#f3e5d8, #f3e5d8) padding-box,
+        linear-gradient(0.75turn, #e3852e, #e3852e00) border-box;
 }
 
 .historyCard .top .completionCircle p {
@@ -37,7 +39,7 @@
 
 .historyCard .bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -45,13 +47,14 @@
 .historyCard .bottom .points {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .historyCard .bottom .videos {
     display: flex;
     flex-direction: column;
-    border-left: 1px solid gray;
-    padding-left: 4rem;
+
+    align-items: center;
 }
 
 .historyCard img {

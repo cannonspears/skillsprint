@@ -11,13 +11,13 @@ function Splash() {
                     Unlock Your Potential with SkillSprint: Learn, Earn, and
                     Grow!
                 </h1>
-                <h2>
+                <p>
                     Dive into a revolutionary website that empowers you to
                     acquire new skills, achieve your goals, and embark on a
                     journey of self-improvement like never before.
-                </h2>
+                </p>
                 <Link to="/signin">
-                    <button>Sign Up For Free</button>
+                    <button className="btn">Sign Up For Free</button>
                 </Link>
             </div>
             <div className="splashImgContainer"></div>

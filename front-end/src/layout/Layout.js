@@ -13,6 +13,8 @@ import './Layout.css'
  */
 function Layout() {
     const [user, setUser] = useState(null)
+    const [loggedIn, setLoggedIn] = useState(false)
+    const [activePage, setActivePage] = useState()
 
     useEffect(() => {
         async function getUser() {
@@ -23,14 +25,12 @@ function Layout() {
         getUser()
     }, [])
 
-    const [loggedIn, setLoggedIn] = useState(false)
-
     return (
         <div className="container-fluid">
-            <Menu loggedIn={loggedIn} user={user} />
+            <Menu loggedIn={loggedIn} user={user} activePage={activePage} />
             <div className="row h-100">
                 <div className="col">
-                    <Routes setLoggedIn={setLoggedIn} user={user} />
+                    <Routes setLoggedIn={setLoggedIn} user={user} setActivePage={setActivePage}/>
                 </div>
             </div>
         </div>

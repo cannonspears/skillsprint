@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react'
 import { fetchAllVideos } from '../../utils/videosApi'
 import SkillCard from './SkillCard'
 import './Explore.css'
-export default function Explore() {
+export default function Explore({setActivePage}) {
     const [skillVids, setSkillVids] = useState(null)
 
     useEffect(() => {
+        setActivePage('explore')
         async function getSkills() {
             const apiData = await fetchAllVideos()
             setSkillVids(apiData)

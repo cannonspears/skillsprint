@@ -8,10 +8,11 @@ import Completed from './Completed'
 import './MySkills.css'
 import { fetchAllVideos } from '../../utils/videosApi'
 
-export default function MySkills({ user, history }) {
+export default function MySkills({ user, history, setActivePage }) {
     const [allVideos, setAllVideos] = useState([])
 
     useEffect(() => {
+        setActivePage('mySkills')
         async function getAllVideos() {
             const apiData = await fetchAllVideos()
             setAllVideos(apiData)

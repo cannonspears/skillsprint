@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 import logo from '../img/Logo.png'
 import './Menu.css'
 
@@ -9,7 +9,24 @@ import './Menu.css'
  * @returns {JSX.Element}
  */
 
-function Menu({ loggedIn }) {
+function Menu({ loggedIn, activePage }) {
+    const { url } = useRouteMatch()
+
+    const skillsButton = (
+        <button className={`${activePage === 'mySkills' ? 'active' : ''}`}>
+            My Skills
+        </button>
+    )
+
+    const exploreButton = (
+        <button
+            className={`${activePage === 'explore' ? 'active' : ''}`}
+            type="button"
+        >
+            Explore
+        </button>
+    )
+
     return (
         <header>
             <h1>
@@ -24,12 +41,8 @@ function Menu({ loggedIn }) {
             {loggedIn ? (
                 <>
                     <div className="hLinks">
-                        <Link to="myskills">
-                            <button type="button">My Skills</button>
-                        </Link>
-                        <Link to="explore">
-                            <button type="button">Explore</button>
-                        </Link>
+                        <Link to="/myskills">{skillsButton}</Link>
+                        <Link to="/explore">{exploreButton}</Link>
                     </div>
                     <div className="hUser">
                         <p className="userInitial">A</p>
