@@ -10,16 +10,19 @@ Sprint into a world of knowledge!
 
 Created by
 
-Jeff Harm
-github.com/jeffjeffjeffh
+Tons of Stuff
+Jeff Harm - github.com/jeffjeffjeffh
 
-Matthew Mammola
-github.com/mammolastan
+Frontend Stuff
+Matthew Mammola - github.com/mammolastan
 
-D. Pehr Lofgreen
-github.com/EngineerPehr
+Backend Stuff, Recommendations System
+D. Pehr Lofgreen - github.com/EngineerPehr
 
-Cannon Spears
-github.com/cannonspears
+Backend Stuff
+Cannon Spears - github.com/cannonspears
 
-And Neeku!
+And
+
+UI / UX Research, Design, Artwork
+Neeku!
