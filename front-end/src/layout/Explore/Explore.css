@@ -3,8 +3,5 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-}
-
-.explore li {
-    width: 400px;
+    justify-content:center
 }
