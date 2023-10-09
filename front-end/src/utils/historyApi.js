@@ -41,12 +41,12 @@ export async function createHistory(history) {
 
 // Make sure the history object passed in here has a user_id, a history_id, and a video_completed.
 export async function updateHistory(history) {
-    const { user_id, history_id } = history
-
+    const { user_id, history_id, video_completed } = history
+    const newHistory = { user_id, history_id, video_completed }
     try {
         const { data } = await axios.put(
             `${API_BASE_URL}/users/${user_id}/history/${history_id}`,
-            { data: history }
+            { data: newHistory }
         )
         return data
     } catch (error) {

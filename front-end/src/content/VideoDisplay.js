@@ -8,7 +8,7 @@ function VideoDisplay() {
     const { topic, video_id } = useParams()
 
     const [video, setVideo] = useState(null)
-
+    
     const getVideo = async (video_id) => {
         const videoFromApi = await fetchVideo(video_id)
         setVideo(videoFromApi)
@@ -25,18 +25,18 @@ function VideoDisplay() {
     return (
         <>
             <h5>{topic}</h5>
-            <h2>{video.title}</h2>
+                        <h2>{video.title}</h2>
 
-            <div class="videoWrapper">
-                <iframe
-                    src={`https://www.youtube.com/embed/${video_id}?si=OeHbx8DAyvGXLNIh`}
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                ></iframe>
-            </div>
-            <Quiz />
+                        <div class="videoWrapper">
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${video_id}?si=OeHbx8DAyvGXLNIh`}
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+                        <Quiz />
         </>
     )
 }
