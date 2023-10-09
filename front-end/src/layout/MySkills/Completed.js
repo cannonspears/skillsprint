@@ -14,7 +14,11 @@ export default function Completed({ history }) {
                 skillMap.set(e.skill_id, skillMap.get(e.skill_id) + 1)
             }
         } else {
-            skillMap.set(e.skill_id, 0)
+            if (e.video_completed) {
+                skillMap.set(e.skill_id, 1)
+            } else {
+                skillMap.set(e.skill_id, 0)
+            }
         }
     })
 

@@ -17,13 +17,13 @@ export default function HistoryCard({ skill_id, completed }) {
         getVideosLength()
     }, [])
 
-    const completionPercentage = Math.min(completed / totalVideos)
+    const completionPercentage = (completed / totalVideos) * 100
 
     const { url } = useRouteMatch()
-    if (url.endsWith('progress') && completionPercentage === 1) {
+    if (url.includes('progress') && completionPercentage === 100) {
         return null
     }
-    if (url.endsWith('completed') && completionPercentage !== 1) {
+    if (url.includes('completed') && completionPercentage !== 100) {
         return null
     }
 
