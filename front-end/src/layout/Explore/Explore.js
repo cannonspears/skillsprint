@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { fetchAllVideos } from '../../utils/videosApi'
 import SkillCard from './SkillCard'
 import './Explore.css'
-
 export default function Explore() {
     const [skillVids, setSkillVids] = useState(null)
 
@@ -13,8 +12,6 @@ export default function Explore() {
         }
 
         getSkills()
-        console.log("skillVids")
-        console.log(skillVids)
     }, [])
 
     return (
