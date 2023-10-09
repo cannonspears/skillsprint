@@ -2,10 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 function CardSingle({ video, topic }) {
+    
     return (
         <>
             <div className="card">
-                <Link to={`/video/${topic}/${video.video_id}`}>
+                <Link
+                    to={{
+                        pathname: `/video/${topic}/${video.video_id}`,
+                        state: {
+                            completed: video.completed,
+                        },
+                    }}
+                >
                     <img
                         src={video.thumbnailUrl}
                         className="card-img-top"
@@ -27,7 +35,7 @@ function CardSingle({ video, topic }) {
                             Completed
                         </span>
                     ) : (
-                        <i class="bi bi-plus-square-dotted addQueue"></i>
+                        <i className="bi bi-plus-square-dotted addQueue"></i>
                     )}
                 </footer>
             </div>
