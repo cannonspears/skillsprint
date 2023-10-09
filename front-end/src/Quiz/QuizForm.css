@@ -24,3 +24,13 @@
     padding: 0.5rem 1rem 0.5rem;
     margin-bottom: 3rem;
 }
+
+.quizAnswers .answer .right {
+    color: green;
+    margin-left: 8rem;
+}
+
+.quizAnswers .answer .wrong {
+    color: red;
+    margin-left: 8rem;
+}
