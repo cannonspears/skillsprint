@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { searchVideos } from './searchVideos'
 
+const YOUTUBE_API_KEY = process.env.REACT_API_YOUTUBE_API_KEY
+
 export default function VideoTimesGetter() {
     // State //
     const [videos, setVideos] = useState([])
@@ -9,7 +11,7 @@ export default function VideoTimesGetter() {
 
     const getVideo = async (videoId) => {
         const { data } = await axios.get(
-            `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoId}&key=AIzaSyB3uccBu9FWtcdt8ajskQbZmWhCuwNYE8Q`
+            `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoId}&key=${YOUTUBE_API_KEY}`
         )
 
         const video = data.items[0]
