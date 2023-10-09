@@ -5,10 +5,9 @@ function create(recommendation) {
 }
 
 function read(recommendationId) {
-    return knex('recommendations')
-        .join('users', 'recommendations.user_id', 'users.user_id')
-        .join('videos', 'recommendations.video_id', 'videos.video_id')
-        .select('*')
+    return knex('recommendations as r')
+        .join('users as u', 'r.user_id', 'u.user_id')
+        .select('r.recommendation_id', 'u.user_name', 'r.videos', 'r.created_at')
         .where({ recommendation_id: recommendationId })
         .first()
 }
@@ -19,12 +18,12 @@ function remove(recommendationId) {
         .del()
 }
 
-function list(user_id) {
-    return knex('recommendations')
-        .join('users', 'recommendations.user_id', 'users.user_id')
-        .join('videos', 'recommendations.video_id', 'videos.video_id')
-        .select('*')
-        .where({ user_id: user_id })
+function list(userId) {
+    return knex('recommendations as r')
+        .join('users as u', 'r.user_id', 'u.user_id')
+        .select('u.user_name', 'r.videos', 'r.created_at')
+        .where('r.user_id', userId)
+        .orderBy('r.created_at', 'desc')
 }
 
 module.exports = {

@@ -11,7 +11,7 @@ router
 router
     .route('/')
     .get(controller.list)
-    .create(controller.create)
+    .post(controller.create)
     .all(methodNotAllowed)
 
 module.exports = router
