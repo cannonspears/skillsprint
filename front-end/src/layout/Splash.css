@@ -8,16 +8,18 @@
     gap: 1rem;
     justify-content: flex-start;
     max-width: 50%;
-}
-.introContainer .messageBox {
+    text-align: center;
+    padding: 10%;
 }
 
 .splash .introContainer h1 {
     color: #32a58e;
+    text-align: left;
 }
 
-.splash .introContainer h2 {
-    font-weight: 400;
+.splash .introContainer h1 + p {
+    text-align: left;
+    font-size: 1.5em;
 }
 
 .splash .introContainer button {
@@ -36,4 +38,9 @@
     bottom: 0;
     right: 0;
     max-width: 730px;
+}
+@media screen and (max-width: 1200px) {
+    .splash .introContainer {
+        max-width: 100%;
+    }
 }
