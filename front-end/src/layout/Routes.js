@@ -36,10 +36,10 @@ function Routes({ setLoggedIn, user }) {
                 <Signin setLoggedIn={setLoggedIn} />
             </Route>
             <Route path="/explore">
-                <Explore />
+                <Explore history={history}/>
             </Route>
             <Route path="/topic/:topic">
-                <CardsList />
+                <CardsList history={history}/>
             </Route>
             <Route path="/video/:topic/:video_id">
                 <VideoDisplay />

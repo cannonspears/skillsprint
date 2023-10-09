@@ -17,10 +17,14 @@ export default function Quiz() {
 
     const generateQuiz = async (e) => {
         e.preventDefault()
-        setSubmitted(true)
-        const formattedTranscript = formatTranscript(formData.transcript)
-        const apiData = await fetchQuiz(formattedTranscript)
-        setQuizData(apiData)
+        if (formData.transcript.length < 30) {
+            alert('Please include at least fifty characters in the transcript!')
+        } else {
+            setSubmitted(true)
+            const formattedTranscript = formatTranscript(formData.transcript)
+            const apiData = await fetchQuiz(formattedTranscript)
+            setQuizData(apiData)
+        }
     }
 
     return (
