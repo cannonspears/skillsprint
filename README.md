@@ -1,4 +1,4 @@
-### SkillSprint
+# SkillSprint
 
 A learning platform for those who want to grow and learn every day.
 
@@ -10,16 +10,16 @@ Sprint into a world of knowledge!
 
 Created by
 
-@Jeffjeffjeffh
 Jeff Harm
+github.com/jeffjeffjeffh
 
-@mammolastan
 Matthew Mammola
+github.com/mammolastan
 
-@EngineerPehr
 D. Pehr Lofgreen
+github.com/EngineerPehr
 
-@cannonspears
 Cannon Spears
+github.com/cannonspears
 
 And Neeku!
