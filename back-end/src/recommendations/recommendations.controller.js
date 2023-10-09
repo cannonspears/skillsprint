@@ -1,4 +1,7 @@
 const service = require('./recommendations.service')
+const getMostFrequentSkill = require('./utils/getMostFrequentSkill')
+const getRecommendedSkills = require('./utils/getRecommendedSkills')
+const getVideo = require('./utils/getVideo')
 const asyncErrorHandler = require('../errors/asyncErrorHandler')
 
 async function recommendationExists (req, res, next) {
@@ -15,8 +18,17 @@ async function recommendationExists (req, res, next) {
     }
 }
 
-async function create (req, res, next) {
-
+async function create (req, res) {
+    const userId = Number(req.params.user_id)
+    const mostFrequentSkill = await getMostFrequentSkill(userId)
+    const recommendedSkills = await getRecommendedSkills(mostFrequentSkill)
+    const videosArray = recommendedSkills.map((skill) => getVideo(skill))
+    const recommendation = {
+        user_id: userId,
+        videos: JSON.stringify(videosArray)
+    }
+    const response = await service.create(recommendation)
+    if (response) res.status(200).json({ data: response[0] })
 }
 
 function read (_req, res) {
@@ -39,7 +51,7 @@ async function list (req, res) {
 
 module.exports = {
     create: [
-        
+        asyncErrorHandler(create)
     ],
     read: [
         asyncErrorHandler(recommendationExists),
