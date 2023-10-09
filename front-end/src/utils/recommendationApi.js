@@ -8,8 +8,7 @@ async function getRecommendation (userId) {
     const recommendationUrl = `${API_BASE_URL}/users/${userId}/recommendations`
     const response = await fetch(recommendationUrl, options)
     const data = await response.json()
-    console.log(data.data[0])
-    return data
+    return data[0]
 }
 
 module.exports = getRecommendation
