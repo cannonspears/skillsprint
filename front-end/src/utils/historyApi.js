@@ -15,10 +15,9 @@ export async function fetchFullHistory(user_id) {
 
 export async function fetchSingleVidHistory(user_id, video_id) {
     try {
-        const { data } = await axios.get(
-            `${API_BASE_URL}/users/${user_id}/history/${video_id}`
-        )
-        return data
+        const history = await fetchFullHistory(user_id)
+        const video = history.find((item) => item.video_id === video_id)
+        return video
     } catch (error) {
         throw error
     }
@@ -64,32 +63,4 @@ export async function deleteHistory(user_id, history_id) {
     } catch (error) {
         throw error
     }
-}
-
-// Stuff to calculate points //
-export async function getUserPointsPerSkill(user_id = null, history = null) {
-    if (!history) {
-        var history = await fetchFullHistory(user_id)
-    }
-
-    const userPointsMap = new Map()
-
-    history.forEach((item) => {
-        const { skill_id, video_completed } = item
-        if (userPointsMap.has(skill_id)) {
-            if (video_completed) {
-                userPointsMap.set(skill_id, userPointsMap.get(skill_id) + 10)
-            }
-        } else {
-            userPointsMap.set(skill_id, 10)
-        }
-    })
-
-    const userPoints = []
-
-    for (let [key, value] of userPointsMap.entries()) {
-        userPoints.push([key, value])
-    }
-
-    return userPoints
 }
