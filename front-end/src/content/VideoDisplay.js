@@ -13,6 +13,7 @@ function VideoDisplay() {
 
     const [video, setVideo] = useState(null)
 
+
     const location = useLocation()
 
     if (location.state) {
@@ -49,6 +50,7 @@ function VideoDisplay() {
 
     return (
         <>
+
             {video ? (
                 <>
                     <div className="contentContainer">
@@ -89,6 +91,7 @@ function VideoDisplay() {
                 <p>Video not returned </p>
             )}
             <Quiz />
+
         </>
     )
 }
