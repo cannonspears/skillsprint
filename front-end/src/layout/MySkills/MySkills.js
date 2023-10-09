@@ -21,7 +21,7 @@ export default function MySkills({ user, history }) {
                     <Progress history={history} />
                 </Route>
                 <Route path={`${url}/completed`}>
-                    <Completed />
+                    <Completed history={history} />
                 </Route>
             </Switch>
         </div>

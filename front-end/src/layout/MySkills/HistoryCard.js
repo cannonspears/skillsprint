@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouteMatch } from 'react-router-dom'
 import videosImg from '../../img/Videos.png'
 import { revSkillMap } from '../../utils/skillMaps'
 import { fetchVideosById } from '../../utils/videosApi'
@@ -17,6 +18,14 @@ export default function HistoryCard({ skill_id, completed }) {
     }, [])
 
     const completionPercentage = Math.min(completed / totalVideos)
+
+    const { url } = useRouteMatch()
+    if (url.endsWith('progress') && completionPercentage === 1) {
+        return null
+    }
+    if (url.endsWith('completed') && completionPercentage !== 1) {
+        return null
+    }
 
     return (
         <div className="historyCard">
