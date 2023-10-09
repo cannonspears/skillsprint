@@ -1,5 +1,4 @@
-const axios = require('axios')
-require('dotenv').config()
+import axios from 'axios'
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 // VALIDATION //
@@ -57,7 +56,7 @@ function validateUpdatedUser(user) {
 }
 
 // API CALLS //
-async function fetchUser(user_id) {
+export async function fetchUser(user_id) {
     try {
         const { data } = await axios.get(`${API_BASE_URL}/users/${user_id}`)
         return data
@@ -66,7 +65,7 @@ async function fetchUser(user_id) {
     }
 }
 
-async function fetchUsers() {
+export async function fetchUsers() {
     try {
         const { data } = await axios.get(`${API_BASE_URL}/users`)
         return data
@@ -75,7 +74,7 @@ async function fetchUsers() {
     }
 }
 
-async function createUser(user) {
+export async function createUser(user) {
     validateNewUser(user)
 
     try {
@@ -86,7 +85,7 @@ async function createUser(user) {
     }
 }
 
-async function updateUser(user) {
+export async function updateUser(user) {
     validateUpdatedUser(user)
 
     try {
@@ -100,18 +99,10 @@ async function updateUser(user) {
     }
 }
 
-async function deleteUser(user_id) {
+export async function deleteUser(user_id) {
     try {
         await axios.delete(`${API_BASE_URL}/users/${user_id}`)
     } catch (error) {
         console.log(error)
     }
-}
-
-module.exports = {
-    fetchUser,
-    fetchUsers,
-    createUser,
-    updateUser,
-    deleteUser
 }
