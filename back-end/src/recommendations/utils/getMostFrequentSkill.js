@@ -1,8 +1,9 @@
-const service = require('../../history/history.service')
+const historyService = require('../../history/history.service')
+const skillService = require('../../skills/skillsService')
 
 async function getMostFrequentSkill (user_id) {
     const skills_with_count = {}
-    const history = await service.list(user_id)
+    const history = await historyService.list(user_id)
     history.forEach((item) => {
         const { skill_id } = item
         if (!skills_with_count[skill_id]) {
@@ -18,7 +19,8 @@ async function getMostFrequentSkill (user_id) {
             count
         }))
         .sort((a, b) => b.count - a.count)
-    return skills[0]
+    const skill = await skillService.readSkillName(skills[0].skill_id)
+    return skill['skill_name']
 }
 
 module.exports = getMostFrequentSkill
