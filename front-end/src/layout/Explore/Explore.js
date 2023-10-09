@@ -13,6 +13,8 @@ export default function Explore() {
         }
 
         getSkills()
+        console.log("skillVids")
+        console.log(skillVids)
     }, [])
 
     return (

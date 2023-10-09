@@ -2,6 +2,8 @@ import { revSkillMap, skillImageMap } from '../../utils/skillMaps'
 import './SkillCard.css'
 import Length from '../../img/Length.png'
 import Videos from '../../img/Videos.png'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function getSkillImage(skill_id) {
     return (
@@ -55,7 +57,9 @@ export default function SkillCard({ videos }) {
                             <p>{minutes} minutes</p>
                         </div>
                     </div>
-                    <button>+ Add To My Skills</button>
+                    <Link to={`/topic/${revSkillMap.get(video.skill_id)}`}>
+                        <button>Browse videos</button>
+                    </Link>
                 </div>
             </div>
         </div>

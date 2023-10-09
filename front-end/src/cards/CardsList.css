@@ -34,7 +34,6 @@
     cursor: pointer;
 }
 
-
 .dot-cont {
     display: grid;
     width: 45px;
@@ -51,4 +50,19 @@
     border-radius: 50%;
     display: inline-block;
     margin: auto;
+}
+
+.addQueue {
+    color: #32a58e;
+    font-size: 1.5em;
+    transition: 0.1s all;
+}
+.addQueue:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+
+.addQueue:active {
+    transform: scale(1.3);
+    color: #82d7c6;
 }
