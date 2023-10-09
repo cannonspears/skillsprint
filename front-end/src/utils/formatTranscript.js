@@ -37,5 +37,5 @@ export function formatTranscript(text) {
         return str.slice(start, end)
     })
 
-    return trimmedSplitText
+    return trimmedSplitText.slice(1).join(' ')
 }

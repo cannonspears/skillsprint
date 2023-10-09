@@ -1,0 +1,29 @@
+.quizGenerator {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 1rem;
+    margin: 1rem auto 1rem;
+    width: 80%;
+}
+
+.quizGenerator label {
+    text-align: center;
+}
+
+.quizGenerator textarea {
+    margin: auto;
+}
+
+.quizGenerator button {
+    margin: auto;
+    color: white;
+    background-color: #e3852e;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem 0.5rem;
+}
+
+.quizGenerator #transcript {
+    width: 60%;
+}

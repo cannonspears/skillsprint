@@ -41,7 +41,7 @@ function Routes({ setLoggedIn, user }) {
             <Route path="/topic/:topic">
                 <CardsList />
             </Route>
-            <Route path="/video/:topic/:videoId">
+            <Route path="/video/:topic/:video_id">
                 <VideoDisplay />
             </Route>
             <Route path="/myskills">
