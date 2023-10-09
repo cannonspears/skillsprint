@@ -4,6 +4,9 @@
     border: 1px solid gray;
     border-radius: 25%;
     background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
 }
 
 .historyCard .top {
@@ -11,12 +14,47 @@
 }
 
 .historyCard .top .completionCircle {
+    margin-right: 1rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #f3e5d8;
     border: 5px solid #e3852e;
     border-radius: 50%;
+    padding: 0.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.historyCard .top .completionCircle p {
+    text-align: center;
+    font-weight: 800;
+    margin: 0;
+}
+
+.historyCard .top .info p {
+    font-weight: 800;
 }
 
 .historyCard .bottom {
     display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.historyCard .bottom .points {
+    display: flex;
+    flex-direction: column;
+}
+
+.historyCard .bottom .videos {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid gray;
+    padding-left: 4rem;
+}
+
+.historyCard img {
+    width: 25px;
+    height: 25px;
 }
