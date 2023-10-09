@@ -1,25 +1,26 @@
-import { useState, useEffect } from 'react'
 import { useRouteMatch } from 'react-router-dom'
 import videosImg from '../../img/Videos.png'
 import { revSkillMap } from '../../utils/skillMaps'
-import { fetchVideosById } from '../../utils/videosApi'
 import './HistoryCard.css'
 
-export default function HistoryCard({ skill_id, completed }) {
-    const [totalVideos, setTotalVideos] = useState(0)
-
-    useEffect(() => {
-        async function getVideosLength() {
-            const apiData = await fetchVideosById(skill_id)
-            setTotalVideos(apiData.length)
-        }
-
-        getVideosLength()
-    }, [])
-
-    const completionPercentage = (completed / totalVideos) * 100
-
+export default function HistoryCard({ history, skill_id, skillVideos }) {
     const { url } = useRouteMatch()
+
+    if (!skillVideos) {
+        return <p>Loading...</p>
+    }
+
+    let skillHistory = history.filter((item) => {
+        return item.skill_id === skill_id
+    })
+
+    let completedVideos = skillHistory.filter((item) => {
+        return item.video_completed
+    })
+
+    const completionPercentage =
+        (completedVideos.length / skillVideos.length) * 100
+
     if (url.includes('progress') && completionPercentage === 100) {
         return null
     }
@@ -47,11 +48,12 @@ export default function HistoryCard({ skill_id, completed }) {
             <div className="bottom">
                 <div className="points">
                     <img src={videosImg} alt=""></img>
-                    {completed * 10}/{totalVideos * 10} Points
+                    {completedVideos.length * 10}/{skillVideos.length * 10}{' '}
+                    Points
                 </div>
                 <div className="videos">
                     <img src={videosImg} alt=""></img>
-                    {completed}/{totalVideos} Videos
+                    {completedVideos.length}/{skillVideos.length} Videos
                 </div>
             </div>
         </div>
