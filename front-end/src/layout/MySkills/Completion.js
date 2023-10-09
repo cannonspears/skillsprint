@@ -34,7 +34,7 @@ export default function Completion({ user, history }) {
             </div>
             <div className="completionItem">
                 <img src={skillsImg} alt=""></img>
-                <p>0</p>
+                <p>{user.skills_completed}</p>
                 <p>Skills Completed</p>
             </div>
             <div className="completionItem">

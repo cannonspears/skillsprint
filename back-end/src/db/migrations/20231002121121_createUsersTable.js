@@ -6,6 +6,7 @@ exports.up = function (knex) {
         table.date('user_dob').notNullable()
         table.integer('user_level').defaultTo(0)
         table.integer('user_points').defaultTo(0)
+        table.integer('skills_completed')
         table.timestamps(true, true)
     })
 }
