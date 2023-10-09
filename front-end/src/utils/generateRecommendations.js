@@ -21,4 +21,4 @@ async function generateForAllUsers () {
     await userIds.forEach((id) => generateRecommendation(id))
 }
 
-generateForAllUsers()
+setInterval(generateForAllUsers, weekInMilliseconds)
