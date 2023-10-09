@@ -1,0 +1,11 @@
+.completed {
+    background-color: #f3f3f3;
+    height: 100%;
+}
+
+.completed ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Route, Switch, useRouteMatch } from 'react-router-dom'
 import Completion from './Completion'
 import SubMenu from './SubMenu'
@@ -5,8 +6,20 @@ import ToDo from './ToDo'
 import Progress from './Progress'
 import Completed from './Completed'
 import './MySkills.css'
+import { fetchAllVideos } from '../../utils/videosApi'
 
 export default function MySkills({ user, history }) {
+    const [allVideos, setAllVideos] = useState([])
+
+    useEffect(() => {
+        async function getAllVideos() {
+            const apiData = await fetchAllVideos()
+            setAllVideos(apiData)
+        }
+
+        getAllVideos()
+    }, [])
+
     const { url } = useRouteMatch()
 
     return (
@@ -18,10 +31,10 @@ export default function MySkills({ user, history }) {
                     <ToDo />
                 </Route>
                 <Route path={`${url}/progress`}>
-                    <Progress history={history} />
+                    <Progress history={history} allVideos={allVideos} />
                 </Route>
                 <Route path={`${url}/completed`}>
-                    <Completed />
+                    <Completed history={history} allVideos={allVideos} />
                 </Route>
             </Switch>
         </div>

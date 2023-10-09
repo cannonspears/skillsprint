@@ -1,27 +1,10 @@
 [
     {
-        "user_name":"April Fools",
+        "user_name": "April Fools",
         "user_age": 23,
-        "user_dob": "04/01/2000"
-    },
-    {
-        "user_name":"Ol' Joe",
-        "user_age": 99,
-        "user_dob": "10/04/1924"
-    },
-    {
-        "user_name":"Young Buck",
-        "user_age": 18,
-        "user_dob": "09/14/2005"
-    },
-    {
-        "user_name":"Mr. Middle",
-        "user_age": 50,
-        "user_dob": "07/02/1973"
-    },
-    {
-        "user_name":"Cannon the XXIII",
-        "user_age": 47,
-        "user_dob": "01/23/1976"
+        "user_dob": "04/01/2000",
+        "user_level": 2,
+        "user_points": 110,
+        "skills_completed": 1
     }
 ]
